@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            /* preview content - just for demo, not part of footer */
+    .preview-content {
+      flex: 1;
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .preview-content h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #0f2b3d;
+      margin-bottom: 0.5rem;
+    }
+    .preview-content p {
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    /* ========== FOOTER DESIGN - COMPACT & RESPONSIVE ========== */
+    .footer {
+      background: rgba(0, 0, 0, 0.7);  /* dark professional navy */
+      color: #ffffff;
+      width: 100%;
+      padding: 2rem 1.5rem 1.2rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem 2rem;
+    }
+
+    /* LEFT SIDE: brand name in ONE LINE (bold, no extra lines above/below) */
+    .footer-brand {
+      flex: 1.2;
+      min-width: 210px;
+    }
+    .brand-single-line {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      color: white;
+      line-height: 1.3;
+      margin-bottom: 0.2rem;
+      background: linear-gradient(135deg, #ffffff, #d9efff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+    /* subtle tagline in same line? no, but to keep clean we add minimal description inline? 
+       but requirement: "Anytechpros Infotech LLP" ek line me likho, upper niche nhi */
+    .brand-description-compact {
+      font-size: 0.8rem;
+      color: #b9d0e6;
+      margin-top: 0.3rem;
+      opacity: 0.85;
+    }
+
+    /* SERVICES grid (IT Consulting list) */
+   .footer-services {
+  flex: 1.6;
+  min-width: 240px;
+  text-align: center;
+}
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      color: #e5d9b3;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem 1rem;
+    }
+    .service-link {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .service-link:hover {
+      color: #ffd966;
+      transform: translateX(2px);
+    }
+    .service-link::before {
+      content: "▹";
+      color: #ffd966;
+      font-size: 0.65rem;
+    }
+
+    /* COMPANY + CONTACT on same row for mobile: using flex wrap */
+    .footer-right-group {
+      flex: 1.2;
+      min-width: 260px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      justify-content: space-between;
+    }
+    .company-section {
+      flex: 1;
+      min-width: 120px;
+    }
+    .contact-section {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    /* company links list */
+    .company-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .company-link {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .company-link:hover {
+      color: #ffd966;
+      padding-left: 3px;
+    }
+    .company-link::before {
+      content: "◆";
+      font-size: 0.55rem;
+      color: #ffd966;
+      opacity: 0.8;
+    }
+
+    /* contact details */
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.87rem;
+      color: #e2e8f0;
+      flex-wrap: wrap;
+    }
+    .contact-icon {
+      min-width: 26px;
+      font-size: 1rem;
+    }
+    .contact-text a {
+      color: #ffd966;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-text a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    .phone-numbers {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .location-text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* footer bottom bar */
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 1.5rem auto 0 auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.75rem;
+      color: #9bb5d0;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 1.2rem;
+    }
+    .footer-legal a {
+      color: #9bb5d0;
+      text-decoration: none;
+    }
+    .footer-legal a:hover {
+      color: #ffd966;
+    }
+
+    /* ----- RESPONSIVE: Phone pe company left side or contact right side dikhe, footer ki height kam ----- */
+    @media screen and (max-width: 880px) {
+      .footer-container {
+        flex-direction: column;
+        gap: 1.8rem;
+      }
+      /* on tablet/mobile: brand, services, then right group */
+      .footer-right-group {
+        width: 100%;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+    }
+
+    @media screen and (max-width: 580px) {
+      .footer {
+        padding: 1.8rem 1.2rem 1rem;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      /* For mobile: company left & contact right using flex row */
+      .footer-right-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: nowrap;
+      }
+      .company-section {
+        flex: 1;
+        min-width: auto;
+      }
+      .contact-section {
+        flex: 1;
+        min-width: auto;
+      }
+      .section-title {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+      }
+      .company-links {
+        gap: 0.5rem;
+      }
+      .company-link {
+        font-size: 0.82rem;
+      }
+      .contact-item {
+        font-size: 0.8rem;
+        gap: 6px;
+      }
+      .contact-icon {
+        min-width: 22px;
+        font-size: 0.9rem;
+      }
+      .brand-single-line {
+        font-size: 1.2rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1.2rem;
+      }
+      .footer-legal {
+        justify-content: center;
+      }
+    }
+
+    /* for very small devices (below 400px) ensure no overflow, keep company left + contact right aligned */
+    @media screen and (max-width: 450px) {
+      .footer-right-group {
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+      .company-section, .contact-section {
+        flex: 1 1 45%;
+      }
+    }
+
+    /* remove extra spacing and keep compactness */
+    .service-link, .company-link, .contact-item {
+      line-height: 1.4;
+    }
+    .brand-single-line {
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFFFFF, #FFE6B0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+    <div class="footer-container">
+      <!-- LEFT: brand name ek line me (bold, upper niche nhi) -->
+      <div class="footer-brand">
+        <div class="brand-single-line">Anytechpros Infotech LLP</div>
+        <!-- optional minimal description (not breaking the one-line rule, but adds context, can be omitted if needed) -->
+        <div class="brand-description-compact">Building India's future with smart infrastructure and technology solutions.</div>
+      </div>
+
+      <!-- SERVICES section with given list -->
+      <div class="footer-services">
+        <div class="section-title">Services</div>
+        <div class="services-grid">
+          <a href="#" class="service-link">IT Consulting & E-Governance</a>
+          <a href="#" class="service-link">Software Development</a>
+          <a href="#" class="service-link">Cyber Security</a>
+          <a href="#" class="service-link">Digital Marketing</a>
+          <a href="#" class="service-link">Telecom Consulting</a>
+          <a href="#" class="service-link">AI & Automation</a>
+          <a href="#" class="service-link">HR Consulting</a>
+          <a href="#" class="service-link">IT Implementation</a>
+        </div>
+      </div>
+
+      <!-- COMPANY + CONTACT in same wrapper to allow left/right alignment on phone -->
+      <div class="footer-right-group">
+        <!-- Company menu (About us, Our product, Career, Project, Contact) -->
+        <div class="company-section">
+          <div class="section-title">Company</div>
+          <div class="company-links">
+            <a href="#" class="company-link">About us</a>
+            <a href="#" class="company-link">Our product</a>
+            <a href="#" class="company-link">Career</a>
+            <a href="#" class="company-link">Project</a>
+            <a href="#" class="company-link">Contact</a>
+          </div>
+        </div>
+
+        <!-- Contact section (email, phones, location) -->
+        <div class="contact-section">
+          <div class="section-title">Contact</div>
+          <div class="contact-details">
+            <div class="contact-item">
+              <!-- <span class="contact-icon">✉️</span> -->
+              <div class="contact-text">
+                <a href="mailto:info@anytechpros.in">✉️ info@anytechpros.in</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <div class="contact-text phone-numbers">
+                <a href="tel:+919625651944">+91-9625651944</a>
+                <a href="tel:+919893021811">+91-9893021811</a>
+              </div>
+            </div>
+            <div class="location-text">
+              <span class="contact-icon">📍</span>
+              <span class="contact-text">Indore, Bhopal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom bar (minimal) -->
+    <div class="footer-bottom">
+      <p>© 2025 Anytechpros Infotech LLP — All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
