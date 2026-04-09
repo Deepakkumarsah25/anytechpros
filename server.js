@@ -27,6 +27,9 @@ mongoose.connect(process.env.MONGO_URL)
 app.get("/",(req,res)=>{
     res.render("index")
 })
+app.get("/id-cards",(req,res)=>{
+    res.render("idcard/idcard.ejs")
+})
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
