@@ -15,7 +15,7 @@
 
     /* ── NAVBAR ── */
     .navbar {
-      position: sticky; top: 0; z-index: 1000;
+       position: fixed; top: 0; z-index: 1000;
       width: 100%; background: var(--black);
       border-bottom: 1px solid var(--border);
     }

@@ -27,6 +27,12 @@ mongoose.connect(process.env.MONGO_URL)
 app.get("/",(req,res)=>{
     res.render("index")
 })
+app.get("/service",(req,res)=>{
+    res.render("service/service.ejs")
+})
+app.get("/about",(req,res)=>{
+    res.render("about/about.ejs")
+})
 app.get("/id-cards",(req,res)=>{
     res.render("idcard/idcard.ejs")
 })

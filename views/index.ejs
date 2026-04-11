@@ -5,1193 +5,543 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
   <title>AnyTechPros | Strategy Led · Product Driven — Fully Responsive</title>
   <link rel="stylesheet" href="css/common/footer.css">
+  <link rel="stylesheet" href="css/common/header.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/chatbort.css">
   <!-- Google Fonts + System Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Barlow:wght@400;500;600;700;800&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  
-  <style>
-    /* ---------- RESET & GLOBAL ---------- */
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --black: #0c0f0f;
-      --black-soft: #121616;
-      --olive: #4f7a3b;
-      --olive-l: #7aa55a;
-      --olive-d: #3a5c2a;
-      --olive-glow: rgba(79, 122, 59, 0.18);
-      --white: #ffffff;
-      --gray-light: rgba(255, 255, 255, 0.75);
-      --border: rgba(79, 122, 59, 0.35);
-      --teal: #2d9c7c;
-      --teal-l: #4bc0a0;
-      --teal-d: #1e6b55;
-      --ink-soft: #0b1215;
-      --muted: #b0c4c2;
-      --card-bg: rgba(18, 24, 27, 0.92);
-      --card-border: rgba(45, 156, 124, 0.25);
-    }
-
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    body {
-      background: #0b0e0e;
-      font-family: 'Inter', 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-      color: var(--white);
-      line-height: 1.45;
-    }
-
-    /* ---------- FIXED NAVBAR (ultra responsive) ---------- */
-    .navbar {
-      position: fixed;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-      background: rgba(12, 15, 15, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-
-    .navbar::before {
-      content: '';
-      display: block;
-      height: 2.5px;
-      background: linear-gradient(90deg, var(--olive-d), var(--olive-l) 45%, var(--olive) 75%, var(--olive-d));
-    }
-
-    .nav-inner {
-      width: 100%;
-      padding: 0 32px;
-      height: 70px;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 0;
-    }
-
-    /* LOGO */
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      flex-shrink: 0;
-      justify-self: start;
-    }
-
-    .logo-img-box {
-      height: 44px;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.25s, filter 0.25s;
-    }
-
-    .logo-img-box img {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    .logo-wrap:hover .logo-img-box {
-      transform: scale(1.03);
-      filter: drop-shadow(0 0 8px var(--olive));
-    }
-
-    .logo-text {
-      line-height: 1.1;
-    }
-
-    .logo-text .brand {
-      font-family: 'Syne', 'DM Sans', sans-serif;
-      font-size: 20px;
-      letter-spacing: 3px;
-      color: var(--white);
-      display: block;
-      font-weight: 700;
-    }
-
-    .logo-text .sub {
-      font-size: 7px;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-      color: var(--olive-l);
-      font-weight: 600;
-      display: block;
-      margin-top: 2px;
-    }
-
-    /* desktop nav */
-    .nav-links {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 36px;
-      width: 100%;
-      padding: 0 12px;
-      margin: 0;
-    }
-
-    .nav-links li {
-      display: flex;
-    }
-
-    .nav-links a {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 4px;
-      color: var(--gray-light);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-radius: 6px;
-      white-space: nowrap;
-      transition: color 0.2s, background 0.2s;
-    }
-
-    .nav-links a .icon {
-      width: 14px;
-      height: 14px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 50%;
-      right: 50%;
-      height: 2px;
-      background: var(--olive-l);
-      border-radius: 2px;
-      transition: left 0.22s, right 0.22s;
-    }
-
-    .nav-links a {
-      position: relative;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--white);
-      background: var(--olive-glow);
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      left: 12%;
-      right: 12%;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-      justify-self: end;
-    }
-
-    .btn-cta {
-      padding: 8px 22px;
-      background: var(--olive);
-      color: var(--white);
-      font-family: 'Inter', 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 40px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-    }
-
-    .btn-cta:hover {
-      background: var(--olive-d);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(79, 122, 59, 0.3);
-    }
-
-    /* hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: transparent;
-      cursor: pointer;
-      padding: 0 10px;
-    }
-
-    .hamburger:hover {
-      background: var(--olive-glow);
-      border-color: var(--olive);
-    }
-
-    .hamburger span {
-      display: block;
-      height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: transform 0.28s, opacity 0.2s;
-    }
-
-    .hamburger span:nth-child(2) {
-      width: 70%;
-    }
-
-    .hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* mobile drawer */
-    .mobile-drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: min(300px, 82vw);
-      height: 100vh;
-      background: #0e1212;
-      border-left: 1px solid var(--border);
-      z-index: 2000;
-      transform: translateX(110%);
-      transition: transform 0.34s cubic-bezier(0.6, 0, 0.2, 1);
-      display: flex;
-      flex-direction: column;
-      overflow-y: auto;
-    }
-
-    .mobile-drawer.open {
-      transform: translateX(0);
-    }
-
-    .drawer-head {
-      padding: 20px 20px 16px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .drawer-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .drawer-logo img {
-      height: 36px;
-      width: auto;
-    }
-
-    .drawer-logo .brand {
-      font-family: 'Syne', sans-serif;
-      font-size: 18px;
-      letter-spacing: 2px;
-      color: var(--white);
-    }
-
-    .drawer-logo .sub {
-      font-size: 7px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--olive-l);
-    }
-
-    .drawer-close {
-      width: 34px;
-      height: 34px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      background: transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .drawer-close svg {
-      width: 15px;
-      height: 15px;
-      stroke: var(--white);
-      stroke-width: 2;
-    }
-
-    .drawer-nav {
-      padding: 16px 0;
-      flex: 1;
-    }
-
-    .drawer-nav a {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 14px 22px;
-      color: var(--gray-light);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-left: 3px solid transparent;
-      transition: all 0.2s;
-    }
-
-    .drawer-nav a svg {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      stroke-width: 1.8;
-    }
-
-    .drawer-nav a:hover,
-    .drawer-nav a.active {
-      color: var(--white);
-      background: var(--olive-glow);
-      border-left-color: var(--olive-l);
-    }
-
-    .drawer-footer {
-      padding: 20px 22px;
-      border-top: 1px solid var(--border);
-    }
-
-    .drawer-cta {
-      width: 100%;
-      padding: 12px;
-      background: var(--olive);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 40px;
-      cursor: pointer;
-    }
-
-    .drawer-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: 1999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s;
-    }
-
-    .drawer-overlay.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    /* responsive nav */
-    @media (max-width: 1024px) {
-      .nav-links {
-        gap: 24px;
-      }
-      .nav-links a {
-        font-size: 12px;
-      }
-    }
-
-    @media (max-width: 880px) {
-
-      .nav-links,
-      .btn-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-inner {
-        padding: 0 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .logo-img-box img {
-        height: 36px;
-      }
-
-      .logo-text .sub {
-        display: none;
-      }
-
-      .nav-inner {
-        padding: 0 16px;
-      }
-    }
-
-    /* HERO SECTION */
-    .hero {
-      width: 100%;
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6rem 5rem 3rem 5rem;
-      gap: 2rem;
-      position: relative;
-      z-index: 10;
-    }
-
-    .hero-left {
-      flex: 1;
-      max-width: 620px;
-      z-index: 15;
-    }
-
-    .hero-tag {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--teal-l);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      background: rgba(45, 156, 124, 0.12);
-      backdrop-filter: blur(4px);
-      display: inline-block;
-      padding: 5px 14px;
-      border-radius: 40px;
-    }
-
-    .hero-title {
-      font-family: 'Syne', 'Inter', sans-serif;
-      font-size: clamp(32px, 5vw, 52px);
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.2;
-      margin-bottom: 18px;
-      letter-spacing: -0.01em;
-    }
-
-    .hero-desc {
-      font-size: clamp(13px, 2vw, 15px);
-      color: #cbdcd9;
-      line-height: 1.5;
-      margin-bottom: 24px;
-      max-width: 500px;
-    }
-
-    .hero-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--teal);
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 60px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      text-decoration: none;
-      box-shadow: 0 6px 14px rgba(45, 156, 124, 0.3);
-    }
-
-    .hero-btn:hover {
-      background: var(--teal-l);
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 100px 1.8rem 2.5rem;
-        min-height: auto;
-      }
-
-      .hero-left {
-        max-width: 100%;
-        text-align: center;
-      }
-
-      .hero-desc {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-
-    /* ORBIT CONTAINER (fully responsive) */
-    .orbit-container {
-      position: relative;
-      width: clamp(260px, 38vw, 380px);
-      height: clamp(260px, 38vw, 380px);
-      flex-shrink: 0;
-      z-index: 20;
-      margin: 0 auto;
-    }
-
-    .orbit-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 1.2px solid rgba(79, 209, 138, 0.35);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-
-    .center-circle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 48%;
-      height: 48%;
-      border-radius: 50%;
-      background: radial-gradient(ellipse at 30% 30%, #1e2b28, #051010);
-      border: 2px solid var(--teal);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 25;
-      box-shadow: 0 0 30px rgba(45, 156, 124, 0.3);
-    }
-
-    .center-circle svg {
-      width: 80%;
-      height: 80%;
-    }
-
-    .orbit-track {
-      position: absolute;
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    #track1 {
-      width: 70%;
-      height: 70%;
-      animation: spin-cw 16s linear infinite;
-    }
-
-    #track2 {
-      width: 92%;
-      height: 92%;
-      animation: spin-ccw 22s linear infinite;
-    }
-
-    @keyframes spin-cw {
-      to {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-
-    @keyframes spin-ccw {
-      to {
-        transform: translate(-50%, -50%) rotate(-360deg);
-      }
-    }
-
-    .icon-slot {
-      position: absolute;
-      width: 42px;
-      height: 42px;
-      pointer-events: auto;
-    }
-
-    .icon-slot .icon-wrap {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s;
-    }
-
-    .icon-slot .icon-wrap:hover {
-      transform: scale(1.08);
-    }
-
-    #track1 .icon-slot .icon-wrap {
-      animation: counter-cw 16s linear infinite;
-    }
-
-    #track2 .icon-slot .icon-wrap {
-      animation: counter-ccw 22s linear infinite;
-    }
-
-    @keyframes counter-cw {
-      to {
-        transform: rotate(-360deg);
-      }
-    }
-
-    @keyframes counter-ccw {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .icon-slot svg {
-      width: 28px;
-      height: 28px;
-      display: block;
-    }
-
-    @media (max-width: 600px) {
-      .orbit-container {
-        width: 250px;
-        height: 250px;
-      }
-
-      .icon-slot {
-        width: 36px;
-        height: 36px;
-      }
-
-      .icon-slot .icon-wrap {
-        width: 36px;
-        height: 36px;
-      }
-
-      .icon-slot svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-
-    /* TRUST STRIP */
-    .trust-strip {
-      position: relative;
-      z-index: 10;
-      background: rgba(10, 15, 15, 0.9);
-      backdrop-filter: blur(6px);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 12px 28px;
-      padding: 12px 24px;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .trust-item {
-      color: var(--teal-l);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .trust-item::before {
-      content: "⚡";
-      font-size: 12px;
-      color: var(--olive-l);
-    }
-
-    /* ===== SERVICES SECTION — DARK THEME (like hero) ===== */
-    .services-section {
-      background: #0c1215;   /* matching dark background */
-      border-top: 1px solid rgba(79, 122, 59, 0.3);
-      padding: clamp(48px, 7vw, 80px) clamp(24px, 5vw, 80px);
-      position: relative;
-      z-index: 10;
-    }
-
-    .section-inner {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Inter', monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--teal-l);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .section-label::before {
-      content: '';
-      width: 28px;
-      height: 2px;
-      background: var(--teal-l);
-    }
-
-    .section-title {
-      font-family: 'Syne', 'Inter', sans-serif;
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-
-    .section-sub {
-      font-size: 15px;
-      color: #b8cfca;
-      max-width: 550px;
-      margin-bottom: 44px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 28px;
-    }
-
-    /* Card styling: semi-transparent dark with glassmorphism effect */
-    .service-card {
-      background: rgba(18, 28, 32, 0.85);
-      backdrop-filter: blur(2px);
-      border-radius: 28px;
-      padding: 28px 26px;
-      border: 1px solid rgba(45, 156, 124, 0.25);
-      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      border-color: var(--teal);
-      background: rgba(22, 34, 38, 0.95);
-      box-shadow: 0 28px 40px -12px rgba(45, 156, 124, 0.35);
-    }
-
-    .card-icon {
-      font-size: 36px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
-    }
-
-    .service-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #f0f9f6;
-      margin-bottom: 12px;
-      letter-spacing: -0.2px;
-    }
-
-    .service-card p {
-      font-size: 14px;
-      color: #cbdcd9;
-      line-height: 1.5;
-    }
-
-    /* CAPABILITY SECTION (dark theme) */
-    .capability-section {
-      background: #0a1013;
-      border-top: 1px solid rgba(79, 122, 59, 0.3);
-      padding: clamp(48px, 7vw, 80px) clamp(24px, 5vw, 80px);
-      position: relative;
-      z-index: 10;
-    }
-
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(32px, 5vw, 64px);
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    .challenges .section-title,
-    .capability-depth .section-title {
-      color: var(--white);
-    }
-
-    .challenges .section-sub,
-    .capability-depth .section-sub {
-      color: var(--muted);
-    }
-
-    .feature-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .feature-item {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      padding: 16px 18px;
-      border-radius: 20px;
-      border: 1px solid rgba(45, 156, 124, 0.2);
-      background: rgba(45, 156, 124, 0.03);
-      transition: all 0.25s;
-    }
-
-    .feature-item:hover {
-      border-color: var(--teal);
-      background: rgba(45, 156, 124, 0.08);
-      transform: translateX(4px);
-    }
-
-    .feature-icon {
-      font-size: 28px;
-    }
-
-    .feature-text h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-
-    .feature-text p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    .skill-bars {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .skill-item {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      color: #c2dfd9;
-    }
-
-    .skill-percent {
-      color: var(--teal-l);
-    }
-
-    .progress-bar-bg {
-      width: 100%;
-      height: 6px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, var(--teal-d), var(--teal-l));
-      border-radius: 20px;
-      transition: width 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-
-    @media (max-width: 768px) {
-      .showcase-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-    }
-
-    /* FOOTER */
-    .main-footer {
-      background: #050808;
-      border-top: 1px solid var(--border);
-      padding: 2rem 1.5rem 1.8rem;
-      color: #b9cdc8;
-      font-size: 12px;
-      text-align: center;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .footer-links a {
-      color: var(--teal-l);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .footer-links a:hover {
-      color: var(--white);
-    }
-
-    @media (max-width: 700px) {
-      .footer-inner {
-        flex-direction: column;
-        gap: 12px;
-      }
-    }
-  </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Barlow:wght@400;500;600;700;800&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+    rel="stylesheet">
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-inner">
-    <a class="logo-wrap" href="#">
-      <div class="logo-img-box">
-        <img src="data:image/png;base64,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" alt="ATP">
+  <%- include("common/header.ejs")%>
+    <section class="hero">
+      <div class="hero-left">
+        <p class="hero-tag">✦ Top Rated Software Development Company ✦</p>
+        <h1 class="hero-title">Strategy Led Consulting <br>Product Driven Execution</h1>
+        <p class="hero-desc">Experience business growth with customized software & support services. Modern tech,
+          unmatched quality.</p><a href="#" class="hero-btn">Our Services ↗</a>
       </div>
-      <div class="logo-text"><span class="brand">ATP</span><span class="sub">Anytechpros</span></div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#" class="active"><svg class="icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Our Team</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Products</a></li>
-      <li>
-  <a href="/id-cards">
-    <span style="display: flex; align-items: center; gap: 6px;">
-      
-      <!-- ID Card Icon -->
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-        <rect x="2" y="5" width="20" height="14" rx="2"/>
-        <circle cx="8" cy="12" r="2"/>
-        <rect x="12" y="9" width="6" height="2"/>
-        <rect x="12" y="13" width="4" height="2"/>
-      </svg>
+      <div class="orbit-container">
+        <div class="orbit-ring" style="width:190px;height:190px;"></div>
+        <div class="orbit-ring" style="width:270px;height:270px;"></div>
+        <div class="center-circle"><svg viewBox="0 0 190 190">
+            <rect width="190" height="190" fill="#0F2120" rx="95" />
+            <rect x="28" y="42" width="110" height="76" rx="12" fill="#4ade80" />
+            <rect x="35" y="50" width="96" height="62" rx="6" fill="#ffffff" /><text x="83" y="89" text-anchor="middle"
+              font-size="24" fill="#1d9e75" font-weight="800" font-family="monospace">&lt;/&gt;</text>
+            <rect x="60" y="120" width="56" height="6" rx="3" fill="#4ade80" />
+            <rect x="70" y="128" width="36" height="18" rx="4" fill="#2d8c6f" />
+            <circle cx="128" cy="80" r="18" fill="#facc15" opacity="0.95" />
+            <circle cx="125" cy="77" r="6" fill="#0f2120" />
+            <line x1="131" y1="83" x2="140" y2="93" stroke="#0f2120" stroke-width="3" stroke-linecap="round" />
+            <ellipse cx="95" cy="168" rx="42" ry="11" fill="#2d5a50" opacity="0.7" />
+            <rect x="62" y="147" width="66" height="22" rx="6" fill="#8cc084" />
+            <circle cx="50" cy="58" r="7" fill="#facc15" opacity="0.9" />
+            <circle cx="115" cy="52" r="5" fill="#4ade80" opacity="0.9" />
+            <rect x="140" y="48" width="28" height="20" rx="5" fill="#202a36" opacity="0.95" /><text x="154" y="62"
+              text-anchor="middle" font-size="10" fill="#4ade80" font-weight="800">CSS</text>
+          </svg></div>
+        <div class="orbit-track" id="track1">
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#f5de42;"><svg viewBox="0 0 32 32">
+                <rect width="32" height="32" fill="#f5de42" rx="6" /><text x="16" y="24" text-anchor="middle"
+                  font-size="15" fill="#323330" font-weight="800" font-family="monospace">JS</text>
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#fff;"><svg viewBox="0 0 32 32">
+                <polygon points="16,4 30,4 16,26 2,4 8,4 16,17 24,4" fill="#41b883" />
+                <polygon points="16,4 24,4 16,17 8,4" fill="#35495e" />
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#fff;"><svg viewBox="0 0 32 32">
+                <circle cx="16" cy="16" r="14" fill="#21759b" /><text x="16" y="22" text-anchor="middle" font-size="15"
+                  fill="#fff" font-weight="800">W</text>
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#8993be;"><svg viewBox="0 0 40 20" width="36" height="20"><text
+                  x="2" y="15" font-size="13" fill="#fff" font-weight="800" font-family="monospace">php</text></svg>
+            </div>
+          </div>
+        </div>
+        <div class="orbit-track" id="track2">
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#ff2d20;"><svg viewBox="0 0 32 32">
+                <rect width="32" height="32" rx="8" fill="#ff2d20" /><text x="16" y="23" text-anchor="middle"
+                  font-size="18" fill="#fff" font-weight="800">L</text>
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#54c5f8;"><svg viewBox="0 0 32 32">
+                <polygon points="16,4 27,15 22,20 11,9" fill="#47c5fb" />
+                <polygon points="11,23 16,28 27,17 22,12" fill="#00569e" />
+                <polygon points="11,23 16,18 22,12 17,12" fill="#00b4ff" opacity="0.9" />
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#20232a;"><svg viewBox="0 0 32 32">
+                <circle cx="16" cy="16" r="3.5" fill="#61dafb" />
+                <ellipse cx="16" cy="16" rx="14" ry="5.5" fill="none" stroke="#61dafb" stroke-width="1.8" />
+                <ellipse cx="16" cy="16" rx="14" ry="5.5" fill="none" stroke="#61dafb" stroke-width="1.8"
+                  transform="rotate(60 16 16)" />
+                <ellipse cx="16" cy="16" rx="14" ry="5.5" fill="none" stroke="#61dafb" stroke-width="1.8"
+                  transform="rotate(120 16 16)" />
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#e34f26;"><svg viewBox="0 0 32 32">
+                <rect width="32" height="32" fill="#e34f26" /><text x="16" y="23" text-anchor="middle" font-size="17"
+                  fill="#fff" font-weight="800">5</text>
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#1e1e2c;"><svg viewBox="0 0 32 32">
+                <rect width="32" height="32" rx="8" fill="#1e1e2c" /><text x="16" y="22" text-anchor="middle"
+                  font-size="14" fill="#f24e1e" font-weight="800">Fg</text>
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#ffffff;"><svg viewBox="0 0 32 32">
+                <rect width="32" height="32" rx="7" fill="#fff" /><text x="16" y="21" text-anchor="middle"
+                  font-size="10.5" fill="#4285f4" font-weight="800">GCP</text>
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#3c873a;"><svg viewBox="0 0 32 32">
+                <rect width="32" height="32" rx="8" fill="#3c873a" /><text x="16" y="22" text-anchor="middle"
+                  font-size="10" fill="#fff" font-weight="800">NODE</text>
+              </svg></div>
+          </div>
+          <div class="icon-slot">
+            <div class="icon-wrap" style="background:#fff;"><svg viewBox="0 0 32 32">
+                <path
+                  d="M21 8.5c-1.2 1.4-3.2 2.5-5 2.3-.3-1.9.7-3.9 1.8-5.1 1.2-1.4 3.3-2.4 5-2.4.3 2-.7 3.9-1.8 5.2zm1.8 2.9c-2.7-.2-5 1.6-6.3 1.6s-3.3-1.5-5.5-1.5c-2.8.1-5.4 1.6-6.8 4.1-2.9 5-.8 12.4 2.1 16.5 1.4 2 3 4.2 5.2 4.1 2-.1 2.8-1.3 5.2-1.3s3.1 1.3 5.3 1.3c2.2-.1 3.6-2 5-4 1.6-2.3 2.2-4.5 2.2-4.6-.1 0-4.2-1.6-4.3-6.4 0-4 3.3-5.9 3.4-6-.4-.6-1.2-1.3-2.5-1.8z"
+                  fill="#111" />
+              </svg></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <b>ID CARD</b>
-    </span>
-  </a>
-</li>
-    </ul>
-    <div class="nav-actions"><button class="btn-cta">CONTACT US</button><button class="hamburger" id="hamBtn"><span></span><span></span><span></span></button></div>
-  </div>
-</nav>
-<div class="drawer-overlay" id="overlay"></div>
-<aside class="mobile-drawer" id="drawer">
-  <div class="drawer-head"><div class="drawer-logo"><img src="data:image/png;base64,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" alt=""><div><span class="brand">ATP</span><span class="sub">Anytechpros</span></div></div><button class="drawer-close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-  <nav class="drawer-nav"><a href="#" class="active"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a><a href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Our Team</a><a href="#">Services</a><a href="#">Products</a> <li>
-  <a href="/id-cards">
-    <span style="display: flex; align-items: center; gap: 6px;">
-      
-      <!-- ID Card Icon -->
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-        <rect x="2" y="5" width="20" height="14" rx="2"/>
-        <circle cx="8" cy="12" r="2"/>
-        <rect x="12" y="9" width="6" height="2"/>
-        <rect x="12" y="13" width="4" height="2"/>
-      </svg>
+    <div class="trust-strip">
+      <div class="trust-item">Indian Railways</div>
 
-      <b>ID CARD</b>
-    </span>
-  </a>
-</li><a href="#">Contact</a></nav>
-  <div class="drawer-footer"><button class="drawer-cta">CONTACT US →</button></div>
-</aside>
-
-<section class="hero">
-  <div class="hero-left"><p class="hero-tag">✦ Top Rated Software Development Company ✦</p><h1 class="hero-title">Strategy Led Consulting <br>Product Driven Execution</h1><p class="hero-desc">Experience business growth with customized software & support services. Modern tech, unmatched quality.</p><a href="#" class="hero-btn">Our Services ↗</a></div>
-  <div class="orbit-container">
-    <div class="orbit-ring" style="width:190px;height:190px;"></div><div class="orbit-ring" style="width:270px;height:270px;"></div>
-    <div class="center-circle"><svg viewBox="0 0 190 190"><rect width="190" height="190" fill="#0F2120" rx="95" /><rect x="28" y="42" width="110" height="76" rx="12" fill="#4ade80" /><rect x="35" y="50" width="96" height="62" rx="6" fill="#ffffff" /><text x="83" y="89" text-anchor="middle" font-size="24" fill="#1d9e75" font-weight="800" font-family="monospace">&lt;/&gt;</text><rect x="60" y="120" width="56" height="6" rx="3" fill="#4ade80" /><rect x="70" y="128" width="36" height="18" rx="4" fill="#2d8c6f" /><circle cx="128" cy="80" r="18" fill="#facc15" opacity="0.95" /><circle cx="125" cy="77" r="6" fill="#0f2120" /><line x1="131" y1="83" x2="140" y2="93" stroke="#0f2120" stroke-width="3" stroke-linecap="round" /><ellipse cx="95" cy="168" rx="42" ry="11" fill="#2d5a50" opacity="0.7" /><rect x="62" y="147" width="66" height="22" rx="6" fill="#8cc084" /><circle cx="50" cy="58" r="7" fill="#facc15" opacity="0.9" /><circle cx="115" cy="52" r="5" fill="#4ade80" opacity="0.9" /><rect x="140" y="48" width="28" height="20" rx="5" fill="#202a36" opacity="0.95" /><text x="154" y="62" text-anchor="middle" font-size="10" fill="#4ade80" font-weight="800">CSS</text></svg></div>
-    <div class="orbit-track" id="track1"><div class="icon-slot"><div class="icon-wrap" style="background:#f5de42;"><svg viewBox="0 0 32 32"><rect width="32" height="32" fill="#f5de42" rx="6"/><text x="16" y="24" text-anchor="middle" font-size="15" fill="#323330" font-weight="800" font-family="monospace">JS</text></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#fff;"><svg viewBox="0 0 32 32"><polygon points="16,4 30,4 16,26 2,4 8,4 16,17 24,4" fill="#41b883"/><polygon points="16,4 24,4 16,17 8,4" fill="#35495e"/></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#fff;"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#21759b"/><text x="16" y="22" text-anchor="middle" font-size="15" fill="#fff" font-weight="800">W</text></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#8993be;"><svg viewBox="0 0 40 20" width="36" height="20"><text x="2" y="15" font-size="13" fill="#fff" font-weight="800" font-family="monospace">php</text></svg></div></div></div>
-    <div class="orbit-track" id="track2"><div class="icon-slot"><div class="icon-wrap" style="background:#ff2d20;"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#ff2d20"/><text x="16" y="23" text-anchor="middle" font-size="18" fill="#fff" font-weight="800">L</text></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#54c5f8;"><svg viewBox="0 0 32 32"><polygon points="16,4 27,15 22,20 11,9" fill="#47c5fb"/><polygon points="11,23 16,28 27,17 22,12" fill="#00569e"/><polygon points="11,23 16,18 22,12 17,12" fill="#00b4ff" opacity="0.9"/></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#20232a;"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="3.5" fill="#61dafb"/><ellipse cx="16" cy="16" rx="14" ry="5.5" fill="none" stroke="#61dafb" stroke-width="1.8"/><ellipse cx="16" cy="16" rx="14" ry="5.5" fill="none" stroke="#61dafb" stroke-width="1.8" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="14" ry="5.5" fill="none" stroke="#61dafb" stroke-width="1.8" transform="rotate(120 16 16)"/></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#e34f26;"><svg viewBox="0 0 32 32"><rect width="32" height="32" fill="#e34f26"/><text x="16" y="23" text-anchor="middle" font-size="17" fill="#fff" font-weight="800">5</text></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#1e1e2c;"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#1e1e2c"/><text x="16" y="22" text-anchor="middle" font-size="14" fill="#f24e1e" font-weight="800">Fg</text></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#ffffff;"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#fff"/><text x="16" y="21" text-anchor="middle" font-size="10.5" fill="#4285f4" font-weight="800">GCP</text></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#3c873a;"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#3c873a"/><text x="16" y="22" text-anchor="middle" font-size="10" fill="#fff" font-weight="800">NODE</text></svg></div></div><div class="icon-slot"><div class="icon-wrap" style="background:#fff;"><svg viewBox="0 0 32 32"><path d="M21 8.5c-1.2 1.4-3.2 2.5-5 2.3-.3-1.9.7-3.9 1.8-5.1 1.2-1.4 3.3-2.4 5-2.4.3 2-.7 3.9-1.8 5.2zm1.8 2.9c-2.7-.2-5 1.6-6.3 1.6s-3.3-1.5-5.5-1.5c-2.8.1-5.4 1.6-6.8 4.1-2.9 5-.8 12.4 2.1 16.5 1.4 2 3 4.2 5.2 4.1 2-.1 2.8-1.3 5.2-1.3s3.1 1.3 5.3 1.3c2.2-.1 3.6-2 5-4 1.6-2.3 2.2-4.5 2.2-4.6-.1 0-4.2-1.6-4.3-6.4 0-4 3.3-5.9 3.4-6-.4-.6-1.2-1.3-2.5-1.8z" fill="#111"/></svg></div></div></div>
-  </div>
-</section>
-
-<div class="trust-strip">
-  <div class="trust-item">Indian Railways</div>
-  
-  <div class="trust-item">BSNL</div>
-  <div class="trust-item">Smart Cities</div>
-  <div class="trust-item">MPSEDC</div>
-  <div class="trust-item">RDSO</div>
-  <div class="trust-item">NHAI</div>
-  <div class="trust-item">State Govt</div>
-  <div class="trust-item">SEZ Authorities</div>
-  <div class="trust-item">Municipal Corp</div>
-  <div class="trust-item">IT Dept</div>
-  <div class="trust-item">Telecom Dept</div>
-</div>
-
-<!-- SERVICES SECTION — now with dark background + vibrant cards -->
-<section class="services-section">
-  <div class="section-inner">
-    <div class="section-label">What We Offer</div>
-    <h2 class="section-title">Full-Spectrum Tech Services</h2>
-    <p class="section-sub">From strategy to deployment — we cover every layer of your digital transformation journey.</p>
-    <div class="services-grid">
-      <div class="service-card"><div class="card-icon">🏛️</div><h3>E-Governance & IT</h3><p>Public sector digital transformation with compliance-first architecture.</p></div>
-      <div class="service-card"><div class="card-icon">💻</div><h3>Software Delivery</h3><p>Full-cycle product development — modern stack, agile delivery, QA.</p></div>
-      <div class="service-card"><div class="card-icon">🔒</div><h3>Cyber Security</h3><p>Proactive threat management, VAPT, CERT-In compliance frameworks.</p></div>
-      <div class="service-card"><div class="card-icon">🤖</div><h3>AI & Automation</h3><p>Intelligent process automation & ML model deployment.</p></div>
-      <div class="service-card"><div class="card-icon">📡</div><h3>Telecom Solutions</h3><p>Network infrastructure, OSS/BSS integration.</p></div>
-      <div class="service-card"><div class="card-icon">📈</div><h3>Digital Marketing</h3><p>Data-driven campaigns, SEO, performance marketing.</p></div>
-      <div class="service-card"><div class="card-icon">⚙️</div><h3>IT Implementation</h3><p>Seamless ERP, CRM rollouts with user enablement.</p></div>
-      <div class="service-card"><div class="card-icon">👥</div><h3>HR & Manpower</h3><p>Strategic HR consulting, talent acquisition & staffing.</p></div>
+      <div class="trust-item">BSNL</div>
+      <div class="trust-item">Smart Cities</div>
+      <div class="trust-item">MPSEDC</div>
+      <div class="trust-item">RDSO</div>
+      <div class="trust-item">NHAI</div>
+      <div class="trust-item">State Govt</div>
+      <div class="trust-item">SEZ Authorities</div>
+      <div class="trust-item">Municipal Corp</div>
+      <div class="trust-item">IT Dept</div>
+      <div class="trust-item">Telecom Dept</div>
     </div>
-  </div>
-</section>
 
-<section class="capability-section">
-  <div class="showcase-grid">
-    <div class="challenges"><div class="section-label">Why AnyTechPros</div><h2 class="section-title">Built for Complex Challenges</h2><p class="section-sub">We deliver transformation, not just software.</p>
-      <div class="feature-list"><div class="feature-item"><div class="feature-icon">🏛️</div><div class="feature-text"><h3>Government & Enterprise Ready</h3><p>Deep experience with public sector and large enterprises, compliance-first.</p></div></div>
-      <div class="feature-item"><div class="feature-icon">⚖️</div><div class="feature-text"><h3>End-to-End Accountability</h3><p>We execute, deploy, and support — we own the outcome.</p></div></div>
-      <div class="feature-item"><div class="feature-icon">🔗</div><div class="feature-text"><h3>10 Integrated Service Lines</h3><p>Cross-domain synergy: security + AI + governance.</p></div></div>
-      <div class="feature-item"><div class="feature-icon">🇮🇳</div><div class="feature-text"><h3>India-First, Globally Aligned</h3><p>Deep fluency in CERT-In, GDWG, BharatiNet, Digital India.</p></div></div>
-    </div></div>
-    <div class="capability-depth"><div class="section-label">Our Expertise</div><h2 class="section-title">Capability Depth</h2><p class="section-sub">Measured across 10 integrated practice areas.</p>
-      <div class="skill-bars"><div class="skill-item"><div class="skill-info"><span class="skill-name">E-Governance</span><span class="skill-percent">96%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="96"></div></div></div>
-      <div class="skill-item"><div class="skill-info"><span class="skill-name">Software Delivery</span><span class="skill-percent">93%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="93"></div></div></div>
-      <div class="skill-item"><div class="skill-info"><span class="skill-name">Cyber Security</span><span class="skill-percent">89%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="89"></div></div></div>
-      <div class="skill-item"><div class="skill-info"><span class="skill-name">AI & Automation</span><span class="skill-percent">87%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="87"></div></div></div>
-      <div class="skill-item"><div class="skill-info"><span class="skill-name">Telecom</span><span class="skill-percent">91%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="91"></div></div></div>
-      <div class="skill-item"><div class="skill-info"><span class="skill-name">IT Implementation</span><span class="skill-percent">84%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="84"></div></div></div>
-      <div class="skill-item"><div class="skill-info"><span class="skill-name">Manpower Support</span><span class="skill-percent">90%</span></div><div class="progress-bar-bg"><div class="progress-fill" data-width="90"></div></div></div>
-    </div></div>
-  </div>
-</section>
+    <!-- SERVICES SECTION — now with dark background + vibrant cards -->
+    <section class="services-section">
+      <div class="section-inner">
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-title">Full-Spectrum Tech Services</h2>
+        <p class="section-sub">From strategy to deployment — we cover every layer of your digital transformation
+          journey.</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="card-icon">🏛️</div>
+            <h3>E-Governance & IT</h3>
+            <p>Public sector digital transformation with compliance-first architecture.</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">💻</div>
+            <h3>Software Delivery</h3>
+            <p>Full-cycle product development — modern stack, agile delivery, QA.</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">🔒</div>
+            <h3>Cyber Security</h3>
+            <p>Proactive threat management, VAPT, CERT-In compliance frameworks.</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">🤖</div>
+            <h3>AI & Automation</h3>
+            <p>Intelligent process automation & ML model deployment.</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">📡</div>
+            <h3>Telecom Solutions</h3>
+            <p>Network infrastructure, OSS/BSS integration.</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">📈</div>
+            <h3>Digital Marketing</h3>
+            <p>Data-driven campaigns, SEO, performance marketing.</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">⚙️</div>
+            <h3>IT Implementation</h3>
+            <p>Seamless ERP, CRM rollouts with user enablement.</p>
+          </div>
+          <div class="service-card">
+            <div class="card-icon">👥</div>
+            <h3>HR & Manpower</h3>
+            <p>Strategic HR consulting, talent acquisition & staffing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<%- include("common/footer.ejs")%>
+    <section class="capability-section">
+      <div class="showcase-grid">
+        <div class="challenges">
+          <div class="section-label">Why AnyTechPros</div>
+          <h2 class="section-title">Built for Complex Challenges</h2>
+          <p class="section-sub">We deliver transformation, not just software.</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">🏛️</div>
+              <div class="feature-text">
+                <h3>Government & Enterprise Ready</h3>
+                <p>Deep experience with public sector and large enterprises, compliance-first.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⚖️</div>
+              <div class="feature-text">
+                <h3>End-to-End Accountability</h3>
+                <p>We execute, deploy, and support — we own the outcome.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🔗</div>
+              <div class="feature-text">
+                <h3>10 Integrated Service Lines</h3>
+                <p>Cross-domain synergy: security + AI + governance.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🇮🇳</div>
+              <div class="feature-text">
+                <h3>India-First, Globally Aligned</h3>
+                <p>Deep fluency in CERT-In, GDWG, BharatiNet, Digital India.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="capability-depth">
+          <div class="section-label">Our Expertise</div>
+          <h2 class="section-title">Capability Depth</h2>
+          <p class="section-sub">Measured across 10 integrated practice areas.</p>
+          <div class="skill-bars">
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">E-Governance</span><span class="skill-percent">96%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-fill" data-width="96"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Software Delivery</span><span
+                  class="skill-percent">93%</span></div>
+              <div class="progress-bar-bg">
+                <div class="progress-fill" data-width="93"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Cyber Security</span><span
+                  class="skill-percent">89%</span></div>
+              <div class="progress-bar-bg">
+                <div class="progress-fill" data-width="89"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">AI & Automation</span><span
+                  class="skill-percent">87%</span></div>
+              <div class="progress-bar-bg">
+                <div class="progress-fill" data-width="87"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Telecom</span><span class="skill-percent">91%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-fill" data-width="91"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">IT Implementation</span><span
+                  class="skill-percent">84%</span></div>
+              <div class="progress-bar-bg">
+                <div class="progress-fill" data-width="84"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Manpower Support</span><span
+                  class="skill-percent">90%</span></div>
+              <div class="progress-bar-bg">
+                <div class="progress-fill" data-width="90"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-  (function() {
-    // Orbit icons positioning (responsive)
-    function positionOrbitIcons() {
-      const track1 = document.getElementById('track1');
-      const track2 = document.getElementById('track2');
-      if (!track1 || !track2) return;
-      
-      const slots1 = Array.from(track1.querySelectorAll('.icon-slot'));
-      const slots2 = Array.from(track2.querySelectorAll('.icon-slot'));
-      
-      function setPositions(track, slots, angles) {
-        const rect = track.getBoundingClientRect();
-        const radius = rect.width / 2;
-        if (radius < 20) return;
-        const centerX = radius, centerY = radius;
-        slots.forEach((slot, idx) => {
-          const angle = angles[idx % angles.length];
-          const left = centerX + radius * Math.cos(angle) - 21;
-          const top = centerY + radius * Math.sin(angle) - 21;
-          slot.style.left = left + 'px';
-          slot.style.top = top + 'px';
-          slot.style.position = 'absolute';
-        });
-      }
-      
-      const angles1 = [0, Math.PI/2, Math.PI, 3*Math.PI/2];
-      const angles2 = [0, Math.PI/4, Math.PI/2, 3*Math.PI/4, Math.PI, 5*Math.PI/4, 3*Math.PI/2, 7*Math.PI/4];
-      setPositions(track1, slots1, angles1);
-      setPositions(track2, slots2, angles2);
-    }
-    
-    window.addEventListener('load', () => {
-      positionOrbitIcons();
-      setTimeout(positionOrbitIcons, 100);
-    });
-    window.addEventListener('resize', () => positionOrbitIcons());
-    
-    // Drawer logic
-    const ham = document.getElementById('hamBtn');
-    const drawer = document.getElementById('drawer');
-    const overlay = document.getElementById('overlay');
-    const closeDrawerBtn = document.querySelector('.drawer-close');
-    const drawerLinks = document.querySelectorAll('.drawer-nav a');
-    const drawerCta = document.querySelector('.drawer-cta');
-    
-    function openDrawer() { drawer.classList.add('open'); overlay.classList.add('open'); ham.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); ham.classList.remove('open'); document.body.style.overflow = ''; }
-    if (ham) ham.addEventListener('click', openDrawer);
-    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
-    if (overlay) overlay.addEventListener('click', closeDrawer);
-    drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
-    if (drawerCta) drawerCta.addEventListener('click', closeDrawer);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-    window.addEventListener('resize', () => { if (window.innerWidth > 880) closeDrawer(); });
-    
-    // Animate progress bars on view
-    const progressFills = document.querySelectorAll('.progress-fill');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fill = entry.target;
-          const width = fill.getAttribute('data-width');
-          if (width) fill.style.width = width + '%';
-          observer.unobserve(fill);
-        }
-      });
-    }, { threshold: 0.3 });
-    progressFills.forEach(fill => observer.observe(fill));
-    
-    // active nav highlight (simple)
-    const navLinks = document.querySelectorAll('.nav-links a, .drawer-nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        const container = this.closest('.nav-links') || this.closest('.drawer-nav');
-        if(container) container.querySelectorAll('a').forEach(a => a.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-  })();
-</script>
+    <%- include("common/footer.ejs")%>
+
+      <script>
+        (function () {
+          // Orbit icons positioning (responsive with dynamic icon size detection)
+          function positionOrbitIcons() {
+            const track1 = document.getElementById('track1');
+            const track2 = document.getElementById('track2');
+            if (!track1 || !track2) return;
+
+            const slots1 = Array.from(track1.querySelectorAll('.icon-slot'));
+            const slots2 = Array.from(track2.querySelectorAll('.icon-slot'));
+
+            function setPositions(track, slots, angles) {
+              // get track dimensions (local coordinate space)
+              const trackRect = track.getBoundingClientRect();
+              const centerX = trackRect.width / 2;
+              const centerY = trackRect.height / 2;
+              const radius = trackRect.width / 2;  // perfect circle, radius = half width
+
+              if (radius < 10) return;
+
+              slots.forEach((slot, idx) => {
+                // get current icon slot dimensions (responsive: changes on mobile)
+                const slotWidth = slot.offsetWidth;
+                const slotHeight = slot.offsetHeight;
+                const halfW = slotWidth / 2;
+                const halfH = slotHeight / 2;
+
+                const angle = angles[idx % angles.length];
+                const left = centerX + radius * Math.cos(angle) - halfW;
+                const top = centerY + radius * Math.sin(angle) - halfH;
+
+                slot.style.left = left + 'px';
+                slot.style.top = top + 'px';
+                slot.style.position = 'absolute';
+              });
+            }
+
+            const angles1 = [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2];
+            const angles2 = [0, Math.PI / 4, Math.PI / 2, 3 * Math.PI / 4, Math.PI, 5 * Math.PI / 4, 3 * Math.PI / 2, 7 * Math.PI / 4];
+            setPositions(track1, slots1, angles1);
+            setPositions(track2, slots2, angles2);
+          }
+
+          // initial positioning and on resize/orientation change
+          window.addEventListener('load', () => {
+            positionOrbitIcons();
+            setTimeout(positionOrbitIcons, 100);
+          });
+          window.addEventListener('resize', () => positionOrbitIcons());
+          window.addEventListener('orientationchange', () => setTimeout(positionOrbitIcons, 30));
+
+          // Drawer logic
+          const ham = document.getElementById('hamBtn');
+          const drawer = document.getElementById('drawer');
+          const overlay = document.getElementById('overlay');
+          const closeDrawerBtn = document.querySelector('.drawer-close');
+          const drawerLinks = document.querySelectorAll('.drawer-nav a');
+          const drawerCta = document.querySelector('.drawer-cta');
+
+          function openDrawer() { drawer.classList.add('open'); overlay.classList.add('open'); ham.classList.add('open'); document.body.style.overflow = 'hidden'; }
+          function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); ham.classList.remove('open'); document.body.style.overflow = ''; }
+          if (ham) ham.addEventListener('click', openDrawer);
+          if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+          if (overlay) overlay.addEventListener('click', closeDrawer);
+          drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
+          if (drawerCta) drawerCta.addEventListener('click', closeDrawer);
+          document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+          window.addEventListener('resize', () => { if (window.innerWidth > 880) closeDrawer(); });
+
+          // Animate progress bars on view
+          const progressFills = document.querySelectorAll('.progress-fill');
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const fill = entry.target;
+                const width = fill.getAttribute('data-width');
+                if (width) fill.style.width = width + '%';
+                observer.unobserve(fill);
+              }
+            });
+          }, { threshold: 0.3 });
+          progressFills.forEach(fill => observer.observe(fill));
+
+          // active nav highlight (simple)
+          const navLinks = document.querySelectorAll('.nav-links a, .drawer-nav a');
+          navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+              const container = this.closest('.nav-links') || this.closest('.drawer-nav');
+              if (container) container.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+              this.classList.add('active');
+            });
+          });
+        })();
+      </script>
+
+     
+      <div class="chatbot-fixed">
+        <div class="chat-toggle" id="chatToggleBtn">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none">
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          </svg>
+        </div>
+        <div class="chat-window hidden" id="chatWindow">
+          <div class="chat-header">
+            <h4>🤖 ATP Assist</h4>
+            <span>AI Support</span>
+          </div>
+          <div class="chat-messages" id="chatMessages">
+            <div class="message bot-msg">👋 Hi! I'm ATP Assistant. How can I help you today? Ask about services, ID
+              cards, or tech solutions.</div>
+          </div>
+          <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button id="chatSendBtn">Send</button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function initChatbot() {
+          const toggleBtn = document.getElementById('chatToggleBtn');
+          const chatWindow = document.getElementById('chatWindow');
+          const chatMessagesDiv = document.getElementById('chatMessages');
+          const chatInput = document.getElementById('chatInput');
+          const sendBtn = document.getElementById('chatSendBtn');
+
+          let isOpen = false;
+
+          function toggleChat() {
+            isOpen = !isOpen;
+            if (isOpen) {
+              chatWindow.classList.remove('hidden');
+            } else {
+              chatWindow.classList.add('hidden');
+            }
+          }
+
+          function addMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('message', sender === 'user' ? 'user-msg' : 'bot-msg');
+            msgDiv.textContent = text;
+            chatMessagesDiv.appendChild(msgDiv);
+            chatMessagesDiv.scrollTop = chatMessagesDiv.scrollHeight;
+          }
+
+         function getBotResponse(userMsg) {
+  const msg = userMsg.toLowerCase();
+
+  if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+    return "Hello! 👋 Welcome to AnyTechPros. How can I assist you today?";
+  }
+
+  // ✅ All Services Overview
+  else if (msg.includes('services') || msg.includes('offer')) {
+    return `We offer a wide range of services:
+
+🏛️ E-Governance & IT – Digital transformation for public sector  
+💻 Software Delivery – Full-cycle development & agile solutions  
+🔐 Cyber Security – VAPT, CERT-In compliance & threat protection  
+🤖 AI & Automation – Smart automation & ML solutions  
+📡 Telecom Solutions – Network & OSS/BSS integration  
+📊 Digital Marketing – SEO & performance marketing  
+⚙️ IT Implementation – ERP & CRM deployment  
+👥 HR & Manpower – Hiring & staffing solutions  
+
+👉 Tell me which service you are interested in!`;
+  }
+
+  // ✅ Individual Services
+  else if (msg.includes('e-governance') || msg.includes('government')) {
+    return "🏛️ E-Governance & IT: We help government sectors with digital transformation, compliance-based architecture, and scalable IT systems.";
+  }
+
+  else if (msg.includes('software') || msg.includes('development')) {
+    return "💻 Software Delivery: We provide full-cycle development, modern tech stack, agile delivery, and QA services.";
+  }
+
+  else if (msg.includes('cyber') || msg.includes('security')) {
+    return "🔐 Cyber Security: We offer VAPT, CERT-In compliance, threat monitoring, and risk assessment to secure your systems.";
+  }
+
+  else if (msg.includes('ai') || msg.includes('automation')) {
+    return "🤖 AI & Automation: We build intelligent automation systems and deploy machine learning models for business growth.";
+  }
+
+  else if (msg.includes('telecom') || msg.includes('network')) {
+    return "📡 Telecom Solutions: We provide network infrastructure setup and OSS/BSS integration services.";
+  }
+
+  else if (msg.includes('marketing') || msg.includes('seo')) {
+    return "📊 Digital Marketing: We run data-driven campaigns, SEO optimization, and performance marketing strategies.";
+  }
+
+  else if (msg.includes('erp') || msg.includes('crm') || msg.includes('implementation')) {
+    return "⚙️ IT Implementation: We handle ERP & CRM deployment with seamless integration and user enablement.";
+  }
+
+  else if (msg.includes('hr') || msg.includes('manpower') || msg.includes('hiring')) {
+    return "👥 HR & Manpower: We provide strategic hiring, staffing, and HR consulting solutions.";
+  }
+
+  // ✅ ID Card
+  else if (msg.includes('id card')) {
+    return "🪪 ID Card Solutions: We provide smart ID cards with secure credentials. Click on 'ID CARD' in the menu for more details.";
+  }
+
+  // ✅ Contact
+  else if (msg.includes('contact') || msg.includes('email')) {
+    return "📩 You can contact us via the CONTACT US button or email us at hello@anytechpros.com.";
+  }
+
+  // ✅ Pricing
+  else if (msg.includes('price') || msg.includes('cost') || msg.includes('quote')) {
+    return "💰 Pricing depends on your requirements. Share your needs and we’ll provide a custom quote.";
+  }
+
+  // ✅ Thanks
+  else if (msg.includes('thanks') || msg.includes('thank')) {
+    return "You're welcome! 😊 Let me know if you need anything else.";
+  }
+
+  // ❌ Default
+  else {
+    return "I can help you with our services like Software, AI, Cybersecurity, Marketing, etc. Please tell me what you need 😊";
+  }
+}
+
+          function sendMessage() {
+            const userText = chatInput.value.trim();
+            if (!userText) return;
+            addMessage(userText, 'user');
+            chatInput.value = '';
+
+            setTimeout(() => {
+              const reply = getBotResponse(userText);
+              addMessage(reply, 'bot');
+            }, 400);
+          }
+
+          toggleBtn.addEventListener('click', toggleChat);
+          sendBtn.addEventListener('click', sendMessage);
+          chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+          });
+        })();
+        const links = document.querySelectorAll(".nav-links a");
+
+
+      </script>
 </body>
+
 </html>
