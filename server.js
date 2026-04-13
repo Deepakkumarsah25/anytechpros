@@ -36,6 +36,15 @@ app.get("/about",(req,res)=>{
 app.get("/id-cards",(req,res)=>{
     res.render("idcard/idcard.ejs")
 })
+
+app.get("/contect",(req,res)=>{
+    res.render("contected/contect.ejs")
+})
+const contactRoutes = require("./routes/contactRoutes");
+
+// routes use
+app.use("/", contactRoutes);
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

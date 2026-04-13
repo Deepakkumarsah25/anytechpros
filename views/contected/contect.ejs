@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>AnyTechPros | Contact — Enterprise & Government Solutions</title>
+    <!-- Google Fonts: modern and crisp -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/common/header.css">
+    <link rel="stylesheet" href="css/common/footer.css">
+    <link rel="stylesheet" href="css/contect/contect.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</head>
+
+<body>
+    <%- include("../common/header.ejs") %>
+
+
+        <!-- MAIN GRID: both sections as attractive cards (left form, right get in touch card) -->
+        <div class="contact-grid">
+            <!-- LEFT COLUMN: Send Inquiry Form Card using real placeholder attributes for lighter appearance -->
+            <div class="form-column">
+                <div class="form-card">
+                    <div class="form-header">
+                        <h2>Send Inquiry →</h2>
+                        <span><i class="fas fa-bolt"></i> Quick response</span>
+                    </div>
+                    <form id="simplifiedForm" action="/submit-contact" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>FULL NAME</label>
+                                <input type="text" id="fullNameSimple" name="fullName" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>MOBILE NUMBER</label>
+                                <input type="tel" id="mobileSimple" name="mobile" placeholder="+91 00000 00000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>EMAIL ADDRESS</label>
+                                <input type="email" id="emailSimple" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>ORGANISATION / DEPARTMENT</label>
+                                <input type="text" id="orgSimple" name="organisation" placeholder="Company or Government Department"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label>SERVICE INTEREST</label>
+                                <select id="serviceSimple" name="service"  required>
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option value="Government Projects & IT Consulting">Government Projects & IT
+                                        Consulting</option>
+                                    <option value="Software & App Development">Software & App Development</option>
+                                    <option value="Cyber Security Services">Cyber Security Services</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Telecom & Infrastructure Consulting">Telecom & Infrastructure
+                                        Consulting</option>
+                                    <option value="AI & Automation Solutions">AI & Automation Solutions</option>
+                                    <option value="IT Implementation & Project Execution">IT Implementation & Project
+                                        Execution</option>
+                                    <option value="Business & Management Consulting">Business & Management Consulting
+                                    </option>
+                                    <option value="HR Consulting">HR Consulting</option>
+                                    <option value="Manpower & Project Supportive Service">Manpower & Project Supportive
+                                        Service</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label>MESSAGE</label>
+                                <textarea rows="3" id="msgSimple"
+                                   name="message" placeholder="Describe your requirement or project brief."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="sector-note">
+                            <i class="fas fa-chart-simple"></i> Central & State Govt · PSUs · BFSI · Telecom ·
+                            Healthcare · Education · Manufacturing · Real Estate · Startups
+                        </div>
+
+                        <button type="submit" class="send-btn"><i class="fas fa-paper-plane"></i> SEND INQUIRY
+                            →</button>
+                    </form>
+                    <div class="help-note">
+                        <i class="fas fa-handshake"></i> Government Projects · Enterprise IT · Consulting Retainer ·
+                        Project-Based · Managed Services · Manpower Outsourcing
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Get in touch - fully inside an attractive card -->
+            <div class="getintouch-column">
+                <div class="touch-card">
+                    <div class="section-badge">
+                        <i class="fas fa-comment-dots"></i> Connect directly
+                    </div>
+                    <div class="touch-title">Get in touch</div>
+                    <div class="touch-sub">Let's discuss your next project — government, enterprise or innovation.</div>
+
+                    <!-- address + contacts exactly as image details inside card -->
+                    <div class="contact-item-list">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">
+                                <strong>Registered Address</strong>
+                                <p>238, Royal Krishna Bungalow, Near Emerald Heights School, Indore, Madhya Pradesh -
+                                    452010, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <strong>Email</strong>
+                                <p>contact@anytechpros.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-building"></i></div>
+                            <div class="contact-text">
+                                <strong>AnyTechPros InfoTech LLP</strong>
+                                <p>Digital innovation hub</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-list">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-volume"></i></div>
+                            <div class="contact-text phone-row">
+                                <strong>CONTACT NUMBERS</strong>
+                                <span class="phone-number"><i class="fas fa-phone-alt"></i> +91 96256 51944</span>
+                                <span class="phone-number"><i class="fab fa-whatsapp"></i> +91 98930 21811</span>
+                                <span style="font-size:0.7rem; color:#8ba5ce;">24/7 Enterprise Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sectors-served-right">
+                        <h4><i class="fas fa-globe-asia"></i> SECTORS SERVED</h4>
+                        <div class="tag-group">
+                            <span>Central & State Govt</span><span>PSUs</span><span>BFSI</span><span>Telecom</span>
+                            <span>Healthcare</span><span>Education</span><span>Manufacturing</span><span>Real
+                                Estate</span><span>Startups</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <%- include("../common/footer.ejs") %>
+            </div>
+
+
+            <script>
+                // Simplified form logic with real placeholder attributes (light appearance by CSS)
+                const simpleForm = document.getElementById('simplifiedForm');
+                const fullNameSimple = document.getElementById('fullNameSimple');
+                const mobileSimple = document.getElementById('mobileSimple');
+                const emailSimple = document.getElementById('emailSimple');
+                const orgSimple = document.getElementById('orgSimple');
+                const msgSimple = document.getElementById('msgSimple');
+                const serviceSimple = document.getElementById('serviceSimple');
+
+                function resetSimpleForm() {
+                    fullNameSimple.value = "";
+                    mobileSimple.value = "";
+                    emailSimple.value = "";
+                    orgSimple.value = "";
+                    msgSimple.value = "";
+                    serviceSimple.selectedIndex = 0;  // selects the disabled placeholder option
+                }
+document.getElementById("simplifiedForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch("/submit-contact", {
+            method: "POST",
+            body: new URLSearchParams(formData)
+        });
+
+        const result = await response.json();
+
+        // ✅ Success Popup
+        Swal.fire({
+            icon: "success",
+            title: "Submitted Successfully 🎉",
+            text: "Your inquiry has been sent. We will contact you within 24 hours.",
+            confirmButtonColor: "#14b8a6"
+        });
+
+        // ✅ Form Reset
+        form.reset();
+
+    } catch (error) {
+        // ❌ Error Popup
+        Swal.fire({
+            icon: "error",
+            title: "Something went wrong",
+            text: "Please try again later."
+        });
+    }
+});
+               
+            </script>
+</body>
+
+</html>

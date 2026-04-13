@@ -63,7 +63,7 @@
 </li>
   
     </ul>
-    <div class="nav-actions"><button class="btn-cta">CONTACT US</button><button class="hamburger" id="hamBtn"><span></span><span></span><span></span></button></div>
+    <div class="nav-actions"><button class="btn-cta" onclick="contect()">CONTACT US</button><button class="hamburger" id="hamBtn"><span></span><span></span><span></span></button></div>
   </div>
 </nav>
 <div class="drawer-overlay" id="overlay"></div>
@@ -121,7 +121,7 @@
 </nav>
   
 
-  <div class="drawer-footer"><button class="drawer-cta">CONTACT US →</button></div>
+  <div class="drawer-footer"><button class="drawer-cta" onclick="contect()">CONTACT US →</button></div>
 </aside>
 <script>
  const currentPath = window.location.pathname;
@@ -159,4 +159,7 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("open");
   hamBtn.classList.remove("open");
 });
+function contect(){
+  window.location.href="/contect"
+}
 </script>

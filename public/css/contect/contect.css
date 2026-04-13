@@ -1,0 +1,487 @@
+    /* Root teal color scheme - consistent with the design language */
+        :root {
+            --teal: #14b8a6;
+            --teal-dark: #0d9488;
+            --teal-light: #5eead4;
+            --teal-glow: rgba(20, 184, 166, 0.25);
+            --teal-bg-subtle: rgba(20, 184, 166, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* MAIN GRID - two columns with attractive cards */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 3rem 3rem 4rem 3rem;
+            gap: 2.5rem;
+            background: #0b0e17;
+            margin-top: 70px;
+        }
+
+        /* LEFT COLUMN: Send Inquiry Form Card */
+        .form-column {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .form-card {
+            background: #11161f;
+            border-radius: 2rem;
+            padding: 2rem 2.2rem;
+            border: 1px solid #2a3343;
+            box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            height: 100%;
+        }
+
+        .form-card:hover {
+            box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.6);
+            border-color: #3b4a62;
+        }
+
+        .form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 1px dashed #2a3342;
+            padding-bottom: 0.8rem;
+        }
+
+        .form-header h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, var(--teal-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .form-header span {
+            color: var(--teal);
+            font-weight: 500;
+            font-size: 0.75rem;
+            background: #1e2a3a;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .form-group.full-width {
+            flex: 100%;
+        }
+
+        label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #9cb4d6;
+            display: block;
+            margin-bottom: 0.45rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid #2b3445;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            background: #0a0e16;
+            color: #f0f4fc;
+            transition: all 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 2px var(--teal-glow);
+        }
+
+        /* LIGHTER PLACEHOLDER STYLES - making placeholder text lighter and semi-transparent */
+        input::placeholder,
+        textarea::placeholder {
+            color: #6c7f9e;
+            opacity: 0.7;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+
+        select {
+            color: #f0f4fc;
+        }
+
+        select option {
+            background: #0a0e16;
+            color: #e2e8f0;
+        }
+
+        input,
+        textarea {
+            color: #ffffff;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #8a9fc0;
+            opacity: 0.65;
+            font-weight: 400;
+        }
+
+        .sector-note {
+            font-size: 0.7rem;
+            margin-top: 1rem;
+            color: #b9d0f0;
+            background: #0e1420;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #283040;
+            letter-spacing: 0.2px;
+        }
+
+        .send-btn {
+            background: var(--teal);
+            border: none;
+            color: white;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            width: 100%;
+            margin-top: 1.8rem;
+            cursor: pointer;
+            transition: 0.25s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 14px var(--teal-glow);
+        }
+
+        .send-btn:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -8px var(--teal-dark);
+        }
+
+        /* RIGHT COLUMN: Get in touch - attractive card */
+        .getintouch-column {
+            flex: 1.2;
+            min-width: 300px;
+        }
+
+        .touch-card {
+            background: #11161f;
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            border: 1px solid #2a3343;
+            box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            height: 100%;
+        }
+
+        .touch-card:hover {
+            box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.6);
+            border-color: #3b4a62;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0f1622;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+            border: 0.5px solid #2c3548;
+        }
+
+        .touch-title {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(130deg, #ffffff, var(--teal-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .touch-sub {
+            color: #a3bbda;
+            margin-bottom: 2rem;
+            border-left: 3px solid var(--teal);
+            padding-left: 1rem;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        /* contact items inside card */
+        .contact-item-list {
+            margin: 1.5rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.6rem;
+            transition: 0.1s;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: #0c111c;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--teal);
+            border: 1px solid #293755;
+            transition: 0.2s;
+        }
+
+        .contact-item:hover .contact-icon {
+            background: #1a2538;
+            border-color: var(--teal);
+            color: var(--teal-light);
+        }
+
+        .contact-text strong {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #d6e6ff;
+            letter-spacing: 0.3px;
+            margin-bottom: 3px;
+        }
+
+        .contact-text p,
+        .contact-text span {
+            font-size: 0.9rem;
+            color: #bfd2f0;
+            line-height: 1.4;
+        }
+
+        .phone-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .phone-number {
+            font-weight: 600;
+            font-size: 1rem;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sectors-served-right {
+            margin: 1.8rem 0 1rem 0;
+        }
+
+        .sectors-served-right h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-group span {
+            background: #0f1624;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #c7dcff;
+            border: 0.5px solid #2a3445;
+            transition: 0.1s;
+        }
+
+        .tag-group span:hover {
+            background: #1a253a;
+            border-color: var(--teal);
+            color: var(--teal-light);
+        }
+
+        .help-note {
+            margin-top: 1.8rem;
+            background: var(--teal-bg-subtle);
+            padding: 1rem 1.2rem;
+            border-radius: 28px;
+            border-left: 3px solid var(--teal);
+            font-size: 0.75rem;
+            color: #bbd4ff;
+            font-weight: 500;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border-color: #242c3a;
+        }
+
+        footer {
+            background: #07090f;
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #171e2a;
+            font-size: 0.75rem;
+            color: #8fa2c2;
+        }
+
+        /* Responsive: all devices */
+        @media (max-width: 1050px) {
+            .navbar {
+                padding: 1rem 2rem;
+            }
+
+            .contact-grid {
+                padding: 2rem 2rem 3rem 2rem;
+                gap: 2rem;
+            }
+
+            .touch-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .contact-grid {
+                flex-direction: column;
+            }
+
+            .form-column,
+            .getintouch-column {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .form-card,
+            .touch-card {
+                padding: 1.8rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                row-gap: 0.8rem;
+            }
+
+            .contact-grid {
+                padding: 1.5rem;
+            }
+
+            .form-card,
+            .touch-card {
+                padding: 1.4rem;
+            }
+
+            .form-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .touch-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-item {
+                gap: 0.8rem;
+            }
+
+            .contact-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+
+            .send-btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .tag-group span {
+                font-size: 0.65rem;
+                padding: 0.3rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .form-row {
+                gap: 0.9rem;
+            }
+
+            .contact-text p,
+            .phone-number {
+                font-size: 0.8rem;
+            }
+
+            .help-note {
+                font-size: 0.7rem;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b0e17;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2d3a50;
+            border-radius: 10px;
+        }
