@@ -1,4 +1,4 @@
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --black:      #111111;
       --black-soft: #1a1a1a;
@@ -41,7 +41,6 @@
       text-decoration: none; flex-shrink: 0;
       justify-self: start;
     }
-    /* Show logo exactly as uploaded — dark box style */
     .logo-img-box {
       height: 46px;
       border-radius: 5px;
@@ -61,21 +60,19 @@
     .logo-text .brand { font-family: 'Bebas Neue', sans-serif; font-size: 21px; letter-spacing: 4px; color: var(--white); display: block; }
     .logo-text .sub   { font-size: 7.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--olive-l); font-weight: 500; display: block; margin-top: 1px; }
 
-    /* ── CENTER: NAV LINKS — spread full width ── */
-   .nav-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 45px; /* 👈 yaha se spacing control hoga */
-  width: 100%;
-  padding: 0 12px;
-}
-
-.nav-links li {
-  display: flex;
-}
-    
+    /* ── CENTER: NAV LINKS — clean spacing, only required items ── */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 45px;
+      width: 100%;
+      padding: 0 12px;
+    }
+    .nav-links li {
+      display: flex;
+    }
     .nav-links a {
       display: flex; align-items: center; justify-content: center; gap: 6px;
       width: 100%; padding: 8px 6px; color: var(--gray);
@@ -108,14 +105,6 @@
       display: flex; align-items: center; gap: 8px;
       flex-shrink: 0; justify-self: end;
     }
-    .btn-search {
-      width: 36px; height: 36px; border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.1); background: transparent;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: background 0.2s, border-color 0.2s;
-    }
-    .btn-search:hover { background: var(--olive-glow); border-color: var(--olive); }
-    .btn-search svg { width: 15px; height: 15px; stroke: var(--gray); fill: none; stroke-width: 2; stroke-linecap: round; }
     .btn-cta {
       padding: 9px 22px; background: var(--olive); color: var(--white);
       font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 700;
@@ -200,7 +189,7 @@
     .drawer-overlay.open { opacity: 1; pointer-events: all; }
 
     /* ── DEMO CONTENT ── */
-    .demo-body { max-width: 820px; margin: 80px auto; padding: 0 28px; text-align: center; }
+    .demo-body { max-width: 820px; margin: 100px auto 0; padding: 0 28px; text-align: center; }
     .demo-badge { display: inline-block; padding: 5px 14px; background: var(--olive-glow); border: 1px solid var(--border); border-radius: 30px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--olive-l); margin-bottom: 26px; }
     .demo-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 8vw, 84px); letter-spacing: 4px; color: var(--white); line-height: 1; margin-bottom: 18px; }
     .demo-title span { color: var(--olive-l); }
@@ -211,7 +200,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .nav-links { display: none; }
-      .btn-search, .btn-cta { display: none; }
+      .btn-cta { display: none; }
       .hamburger { display: flex; }
       .nav-inner { padding: 0 20px; }
     }
@@ -220,3 +209,10 @@
       .logo-text .sub { display: none; }
       .nav-inner { padding: 0 16px; }
     }
+    .navbar {
+  height: 68px;
+}
+
+.nav-inner {
+  height: 68px;
+}

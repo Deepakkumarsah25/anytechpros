@@ -1,144 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>AnyTechPros | About — Government Advisory & Consulting</title>
-<link rel="stylesheet" href="css/common/header.css">
-<link rel="stylesheet" href="css/common/footer.css">
-<link rel="stylesheet" href="css/about/about.css">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AnyTechPros | About — Policy to Execution</title>
+    <link rel="stylesheet" href="/css/common/header.css">
+<link rel="stylesheet" href="/css/common/footer.css">
+ <link rel="stylesheet" href="/css/about/about.css">
 </head>
 <body>
-<%- include("../common/header.ejs") %>
-<!-- floating particles -->
-<div class="particle" style="width:120px;height:120px;top:10%;left:5%;--d:10s;--ty:-40px;opacity:.3"></div>
-<div class="particle" style="width:60px;height:60px;top:30%;right:8%;--d:7s;--ty:-25px;opacity:.25;animation-delay:2s"></div>
-<div class="particle" style="width:80px;height:80px;top:60%;left:12%;--d:12s;--ty:-35px;opacity:.2;animation-delay:4s"></div>
+ <%- include("../common/header.ejs") %>
+<!-- Hero Section with brand story headline -->
+<section class="hero">
+  <div class="container">
+    <h1>Built to move complex programs <br>from <span>policy to execution</span></h1>
+    <p>AnyTechPros exists to bridge the gap between government vision and on-ground delivery — with speed, structure, and accountability.</p>
+    <!-- Values block -->
+    <div class="values-row">
+      <span class="value-pill">⚖️ Governance-first</span>
+      <span class="value-pill">🎯 Execution-owned</span>
+      <span class="value-pill">📋 Compliance-aware</span>
+      <span class="value-pill">🏗️ Built for complexity</span>
+    </div>
+  </div>
+</section>
 
-<!-- Hero Section -->
-<section class="page-hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <div class="hero-badge"><span></span>Est. 2022</div>
-      <h1 class="hero-h1">About <em>AnyTechPros Policy </em><span class="line2">to Execution.</span></h1>
-      <p class="hero-p">Specialized Government Advisory and Consulting firm delivering end‑to‑end support across Central and State Government departments in India.</p>
-      <div class="hero-actions">
-        <a href="#core" class="btn-primary">Our Strengths ↓</a>
-        <a href="#contact" class="btn-outline">Talk to Experts →</a>
+<!-- Proof Snapshot -->
+<div class="container">
+  <div class="proof-snapshot">
+    <p>📌 <strong>15+ States Covered</strong> | Government Advisory + Delivery Experience | Procurement, Contracts, PMU, Telecom, IT, ERP | Public-Sector and Enterprise Exposure</p>
+  </div>
+</div>
+
+<!-- How We Work -->
+<section>
+  <div class="container">
+    <div class="section-label">How we work</div>
+    <h2 class="section-title">From ambiguity to clarity,<br>in four deliberate steps</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-icon">🔍</div><h3>Understand</h3><p>Deep-dive into context, stakeholders, and constraints</p></div>
+      <div class="step"><div class="step-icon">📐</div><h3>Structure</h3><p>Build governance frameworks, procurement plans, and PMU</p></div>
+      <div class="step"><div class="step-icon">⚙️</div><h3>Execute</h3><p>Deploy technology, manage contracts, drive implementation</p></div>
+      <div class="step"><div class="step-icon">📈</div><h3>Strengthen</h3><p>Monitor, optimize, and scale for lasting impact</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership section -->
+<section>
+  <div class="container">
+    <div class="section-label">Leadership</div>
+    <h2 class="section-title">Driven by experience,<br>rooted in public sector</h2>
+    <div class="leadership-grid">
+      <!-- Leader 1 -->
+      <div class="leader-card">
+        <div class="leader-photo">👩‍💼</div>
+        <div class="leader-name">Anjali Sharma</div>
+        <div class="leader-role">CEO & Founder</div>
+        <div class="capability-tags">
+          <span class="tag">Public Policy</span>
+          <span class="tag">Procurement Strategy</span>
+          <span class="tag">PMU Setup</span>
+        </div>
+      </div>
+      <!-- Leader 2 -->
+      <div class="leader-card">
+        <div class="leader-photo">👨‍💻</div>
+        <div class="leader-name">Rajat Verma</div>
+        <div class="leader-role">CTO</div>
+        <div class="capability-tags">
+          <span class="tag">Enterprise Tech</span>
+          <span class="tag">Telecom Consulting</span>
+          <span class="tag">Cybersecurity</span>
+        </div>
+      </div>
+      <!-- Leader 3 -->
+      <div class="leader-card">
+        <div class="leader-photo">👩‍🔧</div>
+        <div class="leader-name">Priya Menon</div>
+        <div class="leader-role">Head of Delivery</div>
+        <div class="capability-tags">
+          <span class="tag">Program Governance</span>
+          <span class="tag">Contract Management</span>
+          <span class="tag">Compliance</span>
+        </div>
       </div>
     </div>
-    <div class="hero-mosaic">
-      <div class="stat-card reveal reveal-delay-1"><div class="stat-num">28+</div><div class="stat-label">Years Combined Exp.</div></div>
-      <div class="stat-card reveal reveal-delay-2"><div class="stat-num">15+</div><div class="stat-label">States Covered</div></div>
-      <div class="stat-card reveal reveal-delay-3"><div class="stat-num">10</div><div class="stat-label">Member Team</div></div>
-      <div class="stat-card reveal reveal-delay-4"><div class="stat-num">10+</div><div class="stat-label">Big Four Exp.</div></div>
-      <div class="stat-card wide reveal"><div class="stat-icon">🏛️</div><div><div style="font-size:13px;font-weight:700;color:#f0f9f6">Governance‑First, Audit‑Ready</div><div style="font-size:11px;color:var(--muted);margin-top:3px">Procurement · Contract Management · Program Governance</div></div></div>
+  </div>
+</section>
+
+<!-- Sectors Served -->
+<section>
+  <div class="container">
+    <div class="section-label">Sectors served</div>
+    <h2 class="section-title">Where we deliver impact</h2>
+    <div class="sectors-grid">
+      <span class="sector-pill">Government Departments</span>
+      <span class="sector-pill">PSUs</span>
+      <span class="sector-pill">Telecom</span>
+      <span class="sector-pill">Smart Infrastructure</span>
+      <span class="sector-pill">Enterprise Technology</span>
+      <span class="sector-pill">Skill Development</span>
+      <span class="sector-pill">BFSI</span>
+      <span class="sector-pill">Public Digital Systems</span>
     </div>
   </div>
 </section>
 
-<!-- About Overview + Core Strengths -->
-<section class="about-section" id="core">
-  <div class="about-grid">
-    <div class="about-text reveal">
-      <div class="section-label">Who We Are</div>
-      <h2 class="section-title">Government Advisory &<br>Consulting Specialists</h2>
-      <p>AnyTechPros InfoTech LLP, founded in 2022, is a specialized Government Advisory and Consulting firm with over four years of successful engagement across multiple State Governments and Government Departments in India. The firm provides policy‑to‑execution advisory with strong capabilities in procurement strategy, contract management, and program governance, supported by experienced leadership and a skilled consulting team.</p>
-      <p>We deliver policy‑to‑execution support to Central and State Government departments across India. Backed by experienced leadership and a skilled consulting team, AnyTechPros is recognized for its governance‑first, compliance‑driven, and audit‑ready approach, enabling transparent procurement, strong contracts, and successful public sector program delivery.</p>
-    </div>
-    <div class="about-strengths reveal reveal-delay-1">
-      <div class="section-label">Core Strengths</div>
-      <h2 class="section-title" style="font-size: clamp(24px,3.5vw,36px);">What Sets Us Apart</h2>
-      <ul class="core-list">
-        <li>28+ years of combined Government Consulting experience across Founder and Co‑Founder</li>
-        <li>Hands‑on exposure across 15+ states with multiple government departments</li>
-        <li>End‑to‑end expertise in DPR and RFP drafting, procurement models, and contract management</li>
-        <li>Strong capabilities in project and program management lifecycle including PMU support</li>
-        <li>Domain experience across Telecom, IT, Skill Development, ERP, and software implementations</li>
-        <li>10‑member consulting team with 10+ years of Big Four consulting experience</li>
-        <li>Governance‑first, compliance‑driven, and audit‑ready execution approach</li>
-      </ul>
-    </div>
+<!-- Final CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 style="font-size: clamp(28px, 5vw, 42px); font-weight: 700;">Ready to move from policy to execution?</h2>
+    <p style="color: var(--muted); margin-top: 12px;">Let’s discuss how AnyTechPros can accelerate your next initiative.</p>
+    <a href="/contect" class="btn-primary">📞 Talk to Our Team →</a>
   </div>
 </section>
 
-<!-- Core Strengths Grid (detailed) -->
-<section class="about-section" style="padding-top:0;">
-  <div class="strengths-grid" style="max-width:1200px; margin:0 auto;">
-    <div class="strength-card reveal"><span class="strength-icon">📋</span><h3>Procurement & Contract Excellence</h3><p>DPR/RFP drafting, procurement models, contract management, and vendor coordination.</p></div>
-    <div class="strength-card reveal reveal-delay-1"><span class="strength-icon">🏛️</span><h3>Multi‑State Presence</h3><p>Hands‑on exposure across 15+ states with multiple government departments and public sector units.</p></div>
-    <div class="strength-card reveal reveal-delay-2"><span class="strength-icon">⚙️</span><h3>Program Management</h3><p>Full project lifecycle support, PMU setup, milestone tracking, and governance reporting.</p></div>
-    <div class="strength-card reveal reveal-delay-3"><span class="strength-icon">📊</span><h3>Domain Expertise</h3><p>Telecom, IT, Skill Development, ERP, and large‑scale software implementations.</p></div>
-  </div>
-</section>
-
-<!-- Service Areas / Pillars (Government Advisory, IT, Talent, etc.) -->
-<section class="services-pillar">
-  <div class="products-header" style="text-align:center; margin-bottom:48px;">
-    <div class="section-label" style="justify-content:center;">Our Expertise</div>
-    <h2 class="section-title">What We Deliver</h2>
-    <p class="section-sub" style="margin:0 auto;">End‑to‑end capabilities across technology, advisory, and talent.</p>
-  </div>
-  <div class="pillar-grid">
-    <div class="pillar-card reveal"><div class="pillar-icon">🏛️</div><h3>Government Advisory</h3><p>Policy drafting, procurement strategy, contract management, and stakeholder coordination.</p></div>
-    <div class="pillar-card reveal reveal-delay-1"><div class="pillar-icon">🖥️</div><h3>IT Infrastructure</h3><p>Design, deployment, and management of government IT infrastructure and data centers.</p></div>
-    <div class="pillar-card reveal reveal-delay-2"><div class="pillar-icon">💻</div><h3>Software Design & Development</h3><p>Custom enterprise software, ERP, and public service portals with compliance.</p></div>
-    <div class="pillar-card reveal"><div class="pillar-icon">⚙️</div><h3>Business Process Automation</h3><p>Workflow digitization, RPA, and legacy system modernization for efficiency.</p></div>
-    <div class="pillar-card reveal reveal-delay-1"><div class="pillar-icon">📈</div><h3>Data Analytics & BI</h3><p>Real‑time dashboards, predictive analytics, and MIS for decision support.</p></div>
-    <div class="pillar-card reveal reveal-delay-2"><div class="pillar-icon">🤝</div><h3>CRM & CX Solutions</h3><p>Citizen relationship management, grievance redressal, and omni‑channel support.</p></div>
-    <div class="pillar-card reveal"><div class="pillar-icon">🧠</div><h3>Emerging Technology</h3><p>AI/ML, blockchain, and IoT pilots for public sector innovation.</p></div>
-    <div class="pillar-card reveal reveal-delay-1"><div class="pillar-icon">👥</div><h3>Talent Acquisition</h3><p>Strategic recruitment, bulk hiring for government projects, and workforce consulting.</p></div>
-    <div class="pillar-card reveal reveal-delay-2"><div class="pillar-icon">🔒</div><h3>Cyber Security</h3><p>VAPT, CERT‑In compliance, security auditing, and threat management.</p></div>
-  </div>
-</section>
-
-<!-- Team & Experience Highlight -->
-<section class="about-section" style="background:#0a1215;">
-  <div style="max-width:1200px; margin:0 auto; text-align:center;">
-    <div class="reveal">
-      <div class="section-label" style="justify-content:center;">Leadership</div>
-      <h2 class="section-title">Driven by Experience,<br>Rooted in Governance</h2>
-      <p style="font-size:15px; color:#b8cfca; max-width:700px; margin:0 auto 40px auto;">Our founders and consulting team bring decades of hands‑on experience from Big Four firms and direct government engagements.</p>
-    </div>
-    <div class="strengths-grid" style="grid-template-columns:repeat(3,1fr); margin-top:20px;">
-      <div class="strength-card reveal"><span class="strength-icon">👔</span><h3>28+ Years Combined</h3><p>Founder & Co‑founder experience across government consulting and public sector transformation.</p></div>
-      <div class="strength-card reveal reveal-delay-1"><span class="strength-icon">🏢</span><h3>Big Four Pedigree</h3><p>10‑member consulting team with 10+ years of Big Four advisory experience.</p></div>
-      <div class="strength-card reveal reveal-delay-2"><span class="strength-icon">📜</span><h3>Audit‑Ready Delivery</h3><p>Compliance‑first approach ensuring transparent procurement and contract governance.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA Section -->
-<section class="cta-section" id="contact">
-  <div class="cta-inner">
-    <h2>Partner with <em>AnyTechPros</em></h2>
-    <p>Let’s discuss how our policy‑to‑execution expertise can accelerate your next government or enterprise initiative.</p>
-    <div class="cta-buttons">
-      <a href="/contect" class="btn-primary">📧 Contact Us</a>
-      <a href="tel:+919625651944" class="btn-outline">📞 Call Advisory Team</a>
-    </div>
-    <div style="margin-top: 28px; font-size: 12px; color: var(--muted);">
-      <span>📍 Serving 15+ States | Trusted by Central & State Government Departments</span>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<%- include("../common/footer.ejs") %>
-
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
- 
-</script>
+<!-- simple footer note (no navigation) -->
+ <%- include("../common/footer.ejs") %>
 </body>
 </html>

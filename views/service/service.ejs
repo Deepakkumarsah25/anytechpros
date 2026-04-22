@@ -1,242 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>AnyTechPros | Integrated Technology & Government Advisory</title>
-<link rel="stylesheet" href="css/common/header.css">
-<link rel="stylesheet" href="css/common/footer.css">
-<link rel="stylesheet" href="css/service/service.css">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AnyTechPros | Integrated Services – Government, Tech & Advisory</title>
+  <!-- Simple, easy-to-read font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/common/header.css">
+  <link rel="stylesheet" href="/css/common/footer.css">
+ <link rel="stylesheet" href="/css/service/service.css">
 </head>
 <body>
-<%- include("../common/header.ejs") %>
-<!-- floating particles -->
-<div class="particle" style="width:120px;height:120px;top:10%;left:5%;--d:10s;--ty:-40px;opacity:.3"></div>
-<div class="particle" style="width:60px;height:60px;top:30%;right:8%;--d:7s;--ty:-25px;opacity:.25;animation-delay:2s"></div>
-<div class="particle" style="width:80px;height:80px;top:60%;left:12%;--d:12s;--ty:-35px;opacity:.2;animation-delay:4s"></div>
-
-<!-- Hero Section -->
-<section class="page-hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <div class="hero-badge"><span></span>Full-Spectrum Solutions</div>
-      <h1 class="hero-h1">Our <em>Services</em><span class="line2">Built for Impact.</span></h1>
-      <p class="hero-p">From government advisory to AI automation — AnyTechPros delivers integrated, end-to-end technology solutions for enterprises, public sector bodies, and high-growth startups.</p>
-      <div class="hero-actions">
-        <a href="#services" class="btn-primary">Explore Services ↓</a>
-        <a href="#contact" class="btn-outline">Talk to Us →</a>
+  <%- include("../common/header.ejs") %>
+  <main>
+    <!-- Hero section with container inside hero-wrapper (fixed) -->
+    <div class="hero-wrapper">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <div class="hero-badge">FULL-SPECTRUM SOLUTIONS</div>
+            <h1>Our <span>Services</span><br>Built for Impact.</h1>
+            <p>From government advisory to AI automation — AnyTechPros delivers integrated, end-to-end technology solutions for enterprises, public sector bodies, and high-growth startups.</p>
+            <div class="hero-buttons">
+              <a href="#services-core" class="btn-primary">Explore Services ↓</a>
+              <a href="/contect" class="btn-outline">Talk to Us →</a>
+            </div>
+          </div>
+          <div class="hero-cards-grid reveal reveal-delay-1">
+            <div class="hero-feature-card"><div class="card-icon">🏛️</div><h4>Govt. Advisory</h4><p>PMU, policy, compliance</p></div>
+            <div class="hero-feature-card"><div class="card-icon">⚙️</div><h4>Tech Delivery</h4><p>AI, cloud, automation</p></div>
+            <div class="hero-feature-card"><div class="card-icon">🔒</div><h4>Cybersecurity</h4><p>Audits, SOC, compliance</p></div>
+            <div class="hero-feature-card"><div class="card-icon">📡</div><h4>Telecom & Infra</h4><p>Network, OSS/BSS</p></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-mosaic">
-      <div class="stat-card reveal reveal-delay-1"><div class="stat-num">10+</div><div class="stat-label">Service Lines</div></div>
-      <div class="stat-card reveal reveal-delay-2"><div class="stat-num">96%</div><div class="stat-label">Client Satisfaction</div></div>
-      <div class="stat-card reveal reveal-delay-3"><div class="stat-num">200+</div><div class="stat-label">Projects Delivered</div></div>
-      <div class="stat-card reveal reveal-delay-4"><div class="stat-num">15+</div><div class="stat-label">Govt. Partners</div></div>
-      <div class="stat-card wide reveal"><div class="stat-icon">🇮🇳</div><div><div style="font-size:13px;font-weight:700;color:#f0f9f6">India-First, Globally Aligned</div><div style="font-size:11px;color:var(--muted);margin-top:3px">CERT-In · Digital India · BharatNet</div></div></div>
-    </div>
-  </div>
-</section>
 
-<!-- Ticker strip -->
-<div class="ticker-strip" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item">Indian Railways</span><span class="ticker-item">BSNL</span><span class="ticker-item">Smart Cities</span><span class="ticker-item">MPSEDC</span>
-    <span class="ticker-item">RDSO</span><span class="ticker-item">NHAI</span><span class="ticker-item">State Govt.</span><span class="ticker-item">SEZ Authorities</span>
-    <span class="ticker-item">Municipal Corp</span><span class="ticker-item">IT Dept</span><span class="ticker-item">Telecom Dept</span><span class="ticker-item">Big 6 Firms</span>
-    <span class="ticker-item">MNCs</span><span class="ticker-item">Enterprises</span>
-    <span class="ticker-item">Indian Railways</span><span class="ticker-item">BSNL</span><span class="ticker-item">Smart Cities</span><span class="ticker-item">MPSEDC</span>
-    <span class="ticker-item">RDSO</span><span class="ticker-item">NHAI</span><span class="ticker-item">State Govt.</span><span class="ticker-item">SEZ Authorities</span>
-    <span class="ticker-item">Municipal Corp</span><span class="ticker-item">IT Dept</span><span class="ticker-item">Telecom Dept</span><span class="ticker-item">Big 6 Firms</span>
-    <span class="ticker-item">MNCs</span><span class="ticker-item">Enterprises</span>
-  </div>
-</div>
-
-<!-- Image Showcase Section -->
-<section class="showcase-section">
-  <div class="showcase-inner">
-    <div class="showcase-left reveal">
-      <div class="section-label">Who We Serve</div>
-      <h2 class="section-title">Your Trusted Partner<br>for <em style="font-style:normal;color:var(--teal-l)">Every Need</em></h2>
-      <p class="section-sub">Trusted by enterprises, government bodies, and startups. Authorized Partner for multiple MNCs, Big 6 Firms — ensuring tailored solutions for clients.</p>
-      <div class="svc-chip-list">
-        <div class="svc-chip"><span class="chip-icon">🏛️</span> Government Advisory &amp; Project Management</div>
-        <div class="svc-chip"><span class="chip-icon">📜</span> Government Drafting &amp; Contract Writing</div>
-        <div class="svc-chip"><span class="chip-icon">📊</span> GTM Strategy &amp; Business Matchmaking</div>
-        <div class="svc-chip"><span class="chip-icon">⚙️</span> End-to-End Project Management &amp; Monitoring</div>
-        <div class="svc-chip"><span class="chip-icon">👥</span> Recruitment &amp; Workforce Solutions</div>
-        <div class="svc-chip"><span class="chip-icon">🎯</span> Strategic Consulting &amp; Policy Execution</div>
+    <!-- 6 CORE SERVICE GROUPS (refined per requirement) -->
+    <section id="services-core">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-badge">Core Solutions</span>
+          <h2>Integrated service clusters</h2>
+          <p class="section-subhead">Purpose‑built for government, enterprise & infrastructure challenges</p>
+        </div>
+        <div class="services-grid">
+          <!-- 1. Government Advisory & PMU Support -->
+          <div class="service-card reveal">
+            <div class="card-icon">🏛️</div>
+            <h3>Government Advisory & PMU Support</h3>
+            <div class="detail-row"><span class="detail-label">👥 For:</span><span class="detail-text">Ministries, State depts, PSUs, Smart City missions</span></div>
+            <div class="detail-row"><span class="detail-label">⚠️ Problem:</span><span class="detail-text">Fragmented program management, delayed approvals, weak PMU structures</span></div>
+            <div class="detail-row"><span class="detail-label">📦 Includes:</span><span class="detail-text">PMU setup, governance frameworks, policy drafting, MIS dashboards, stakeholder coordination</span></div>
+            <div class="detail-row"><span class="detail-label">🤝 Engagement:</span><span class="detail-text">Advisory Retainer / PMU Support</span></div>
+            <a href="#contact-cta" class="card-cta">Discuss Your Requirement →</a>
+          </div>
+          <!-- 2. Contracting, Documentation & Compliance -->
+          <div class="service-card reveal">
+            <div class="card-icon">📜</div>
+            <h3>Contracting, Documentation & Compliance</h3>
+            <div class="detail-row"><span class="detail-label">👥 For:</span><span class="detail-text">Procurement heads, legal teams, Govt contractors</span></div>
+            <div class="detail-row"><span class="detail-label">⚠️ Problem:</span><span class="detail-text">Non-compliant RFPs, contractual disputes, audit risks</span></div>
+            <div class="detail-row"><span class="detail-label">📦 Includes:</span><span class="detail-text">RFP/RFQ/EOI drafting, GeM support, contract lifecycle mgmt, compliance audits, risk assessment</span></div>
+            <div class="detail-row"><span class="detail-label">🤝 Engagement:</span><span class="detail-text">Project-Based Delivery / Retainer</span></div>
+            <a href="#contact-cta" class="card-cta">Discuss Your Requirement →</a>
+          </div>
+          <!-- 3. Technology Design & Delivery -->
+          <div class="service-card reveal">
+            <div class="card-icon">⚙️</div>
+            <h3>Technology Design & Delivery</h3>
+            <div class="detail-row"><span class="detail-label">👥 For:</span><span class="detail-text">CTOs, digital transformation leads, enterprises</span></div>
+            <div class="detail-row"><span class="detail-label">⚠️ Problem:</span><span class="detail-text">Legacy systems, slow delivery, vendor lock-in</span></div>
+            <div class="detail-row"><span class="detail-label">📦 Includes:</span><span class="detail-text">Custom software, cloud migration, API integration, agile delivery, QA automation, DevOps</span></div>
+            <div class="detail-row"><span class="detail-label">🤝 Engagement:</span><span class="detail-text">Project-Based Delivery / Implementation Support</span></div>
+            <a href="#contact-cta" class="card-cta">Discuss Your Requirement →</a>
+          </div>
+          <!-- 4. Telecom & Infrastructure Consulting -->
+          <div class="service-card reveal">
+            <div class="card-icon">📡</div>
+            <h3>Telecom & Infrastructure Consulting</h3>
+            <div class="detail-row"><span class="detail-label">👥 For:</span><span class="detail-text">Telecom operators, DoT, BharatNet, Infrastructure SPVs</span></div>
+            <div class="detail-row"><span class="detail-label">⚠️ Problem:</span><span class="detail-text">Network inefficiencies, high OPEX, regulatory non-alignment</span></div>
+            <div class="detail-row"><span class="detail-label">📦 Includes:</span><span class="detail-text">Network architecture, OSS/BSS transformation, fiber rollout planning, spectrum advisory, TRAI compliance</span></div>
+            <div class="detail-row"><span class="detail-label">🤝 Engagement:</span><span class="detail-text">Advisory Retainer / Project Delivery</span></div>
+            <a href="#contact-cta" class="card-cta">Discuss Your Requirement →</a>
+          </div>
+          <!-- 5. Cybersecurity, Analytics & Automation -->
+          <div class="service-card reveal">
+            <div class="card-icon">🔒</div>
+            <h3>Cybersecurity, Analytics & Automation</h3>
+            <div class="detail-row"><span class="detail-label">👥 For:</span><span class="detail-text">CISOs, data officers, compliance & IT teams</span></div>
+            <div class="detail-row"><span class="detail-label">⚠️ Problem:</span><span class="detail-text">Cyber threats, manual processes, lack of real-time intelligence</span></div>
+            <div class="detail-row"><span class="detail-label">📦 Includes:</span><span class="detail-text">VAPT, SOC implementation, security audits, RPA/AI automation, data analytics dashboards, CERT-In readiness</span></div>
+            <div class="detail-row"><span class="detail-label">🤝 Engagement:</span><span class="detail-text">Specialist Staffing / Project-Based</span></div>
+            <a href="#contact-cta" class="card-cta">Discuss Your Requirement →</a>
+          </div>
+          <!-- 6. Workforce & Project Support -->
+          <div class="service-card reveal">
+            <div class="card-icon">👥</div>
+            <h3>Workforce & Project Support</h3>
+            <div class="detail-row"><span class="detail-label">👥 For:</span><span class="detail-text">HR heads, project directors, government recruitment cells</span></div>
+            <div class="detail-row"><span class="detail-label">⚠️ Problem:</span><span class="detail-text">Talent shortage, skill gaps, high attrition, staffing compliance</span></div>
+            <div class="detail-row"><span class="detail-label">📦 Includes:</span><span class="detail-text">Contract staffing, permanent recruitment, project-based augmentation, payroll mgmt, L&D programs</span></div>
+            <div class="detail-row"><span class="detail-label">🤝 Engagement:</span><span class="detail-text">Specialist Staffing / Implementation Support</span></div>
+            <a href="#contact-cta" class="card-cta">Discuss Your Requirement →</a>
+          </div>
+        </div>
       </div>
-      <div class="trust-row"><div class="tr-item">Enterprises</div><div class="tr-item">Government Bodies</div><div class="tr-item">MNCs &amp; Big 6</div></div>
-    </div>
-    <div class="showcase-right reveal reveal-delay-2">
-      <div class="img-frame">
-        <div class="img-glow"></div>
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 500'%3E%3Crect width='600' height='500' fill='%230d1a17'/%3E%3Cpath d='M120 180 L280 100 L440 180 L440 360 L280 440 L120 360 Z' fill='none' stroke='%234bc0a0' stroke-width='2.5' stroke-dasharray='6 4'/%3E%3Ccircle cx='280' cy='270' r='45' fill='%232d9c7c' opacity='0.2'/%3E%3Ccircle cx='280' cy='270' r='28' fill='%234bc0a0' opacity='0.9'/%3E%3Ctext x='270' y='278' fill='%23000' font-size='24' font-weight='bold'%3E⚙%3C/text%3E%3Cpath d='M180 180 L220 160 L260 190' stroke='%237aa55a' stroke-width='3' fill='none'/%3E%3Cpath d='M380 180 L340 160 L300 190' stroke='%237aa55a' stroke-width='3' fill='none'/%3E%3Crect x='150' y='300' width='260' height='50' rx='10' fill='%232d9c7c' opacity='0.4'/%3E%3Ctext x='220' y='332' fill='%23ffffff' font-size='14' font-family='monospace'%3EGOVT · ENTERPRISE · SECURE%3C/text%3E%3C/svg%3E"
-             alt="AnyTechPros integrated solutions" class="showcase-img" loading="lazy">
-        <div class="floating-badge fb-tl"><span class="fb-icon">🏛️</span> Govt. Ready</div>
-        <div class="floating-badge fb-br"><span class="fb-icon">🤝</span> Trusted Partner</div>
+    </section>
+
+    <!-- Engagement models section -->
+    <section id="engagement">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-badge">flexible collaboration</span>
+          <h2>Engagement models</h2>
+          <p class="section-subhead">Choose the way we work together — tailored to your risk, budget, and timeline.</p>
+        </div>
+        <div class="engagement-grid">
+          <div class="engagement-card reveal"><span class="card-icon">📋</span><strong>Advisory Retainer</strong><p>Strategic guidance, on‑tap expertise, monthly governance reviews</p></div>
+          <div class="engagement-card reveal"><span class="card-icon">🚀</span><strong>Project-Based Delivery</strong><p>Fixed-scope, milestone-driven execution with clear deliverables</p></div>
+          <div class="engagement-card reveal"><span class="card-icon">📊</span><strong>PMU / Monitoring Support</strong><p>Embedded PMU, real-time dashboards, risk & compliance monitoring</p></div>
+          <div class="engagement-card reveal"><span class="card-icon">🎯</span><strong>Specialist Staffing</strong><p>Rapid deployment of niche talent for cybersecurity, tech, and project roles</p></div>
+          <div class="engagement-card reveal"><span class="card-icon">🔄</span><strong>Implementation Support</strong><p>Hands‑on execution, rollout assistance, post-deployment handholding</p></div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Stats Band -->
-<div class="stats-band">
-  <div class="stats-band-inner">
-    <div class="big-stat reveal"><div class="bs-num">10+</div><div class="bs-label">Service Lines</div></div>
-    <div class="big-stat reveal reveal-delay-1"><div class="bs-num">200+</div><div class="bs-label">Projects Delivered</div></div>
-    <div class="big-stat reveal reveal-delay-2"><div class="bs-num">15+</div><div class="bs-label">Govt. Partners</div></div>
-    <div class="big-stat reveal reveal-delay-3"><div class="bs-num">96%</div><div class="bs-label">Client Satisfaction</div></div>
-  </div>
-</div>
+    <!-- MINI PROOF BLOCKS -->
+    <section>
+      <div class="container">
+        <div class="reveal">
+          <span class="section-badge">proof of impact</span>
+          <h2>Where we deliver results</h2>
+          <p class="section-subhead">Real‑world evidence of transformation across sectors</p>
+        </div>
+        <div class="proof-blocks">
+          <div class="proof-item reveal"><h4>🏭 Sectors served</h4><ul><li>Government (Central/State)</li><li>Telecom & Infrastructure</li><li>Smart Cities & Urban Dev</li><li>Energy & Utilities</li><li>Defence & PSUs</li></ul></div>
+          <div class="proof-item reveal"><h4>🔒 Anonymized examples</h4><ul><li>• State Transport Dept: reduced tender cycle by 40% via PMU support</li><li>• National Telco: ₹120 Cr OPEX saved through network automation</li><li>• Smart City Mission: deployed AI-based grievance redressal</li></ul></div>
+          <div class="proof-item reveal"><h4>📄 Typical outputs</h4><ul><li>PMU governance playbooks</li><li>RFP / contract templates</li><li>Cybersecurity audit reports</li><li>Real‑time MIS dashboards</li><li>AI/automation workflows</li></ul></div>
+          <div class="proof-item reveal"><h4>🧠 Relevant frameworks</h4><ul><li>PMP / PRINCE2, ITIL4</li><li>TOGAF, NIST CSF, ISO 27001</li><li>GeM, DGS&D, CVC guidelines</li><li>Digital India frameworks</li></ul></div>
+        </div>
+      </div>
+    </section>
 
-<!-- Services Section -->
-<section class="services-section" id="services">
-  <div class="svc-section-inner">
-    <div class="svc-header reveal"><div class="svc-header-left"><div class="section-label">Full Spectrum</div><h2 class="section-title" style="margin-bottom:0">Everything You Need,<br>Under One Roof</h2><div class="svc-count-badge">10 Integrated Practice Areas</div></div><p style="font-size:14px;color:#b8cfca;max-width:360px;line-height:1.65">Cross-domain synergy — security, AI, governance, telecom and beyond — all under one roof.</p></div>
-    <div class="featured-card reveal">
-      <div class="fc-body"><div class="fc-num">01 / FLAGSHIP</div><div class="fc-tag">🏛️ Government</div><h2>Government Advisory &amp; Project Management</h2><p>End-to-end advisory for public sector digital transformation. We navigate complex government ecosystems with compliance-first architecture and deep policy fluency.</p><ul class="fc-bullets"><li>Digital India &amp; Smart Cities alignment</li><li>Policy drafting &amp; stakeholder management</li><li>Program monitoring &amp; MIS dashboards</li><li>Bid management &amp; RFP consulting</li></ul><a href="#contact" class="fc-cta">Get Started →</a></div>
-      <div class="fc-visual"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='%234bc0a0' stroke-width='2'/%3E%3Cpath d='M60 120 L100 60 L140 120 L120 140 L80 140 Z' fill='%232d9c7c' opacity='0.8'/%3E%3Ctext x='92' y='135' fill='white' font-size='24'%3E⚡%3C/text%3E%3C/svg%3E" alt="flagship icon" class="fc-visual-icon"></div>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-card reveal"><div class="card-num">02</div><div class="card-tag">📜 Legal Tech</div><span class="card-icon">📜</span><h3>Government Drafting &amp; Contract Writing</h3><p>Precision drafting of government contracts, MoUs, procurement documents, and RFPs aligned with regulatory standards.</p><ul class="card-bullets"><li>RFP / RFQ / EOI preparation</li><li>Contract negotiation support</li><li>Compliance documentation</li></ul><a class="card-link" data-service="govt-drafting">Learn More →</a></div>
-      <div class="svc-card reveal reveal-delay-1"><div class="card-num">03</div><div class="card-tag">📊 Growth</div><span class="card-icon">📊</span><h3>GTM Strategy &amp; Business Matchmaking</h3><p>Data-driven go-to-market strategies, competitor analysis, and business matchmaking for the right partners.</p><ul class="card-bullets"><li>Market segmentation &amp; research</li><li>Partner ecosystem development</li><li>Revenue growth roadmaps</li></ul><a class="card-link" data-service="gtm">Learn More →</a></div>
-      <div class="svc-card reveal reveal-delay-2"><div class="card-num">04</div><div class="card-tag">⚙️ Operations</div><span class="card-icon">⚙️</span><h3>End-to-End Project Management &amp; Monitoring</h3><p>Full project lifecycle ownership with real-time monitoring, milestone tracking, and risk mitigation.</p><ul class="card-bullets"><li>Agile &amp; waterfall delivery</li><li>PMO setup &amp; governance</li><li>Live MIS &amp; reporting dashboards</li></ul><a class="card-link" data-service="project-mgmt">Learn More →</a></div>
-      <div class="svc-card reveal reveal-delay-1"><div class="card-num">05</div><div class="card-tag">👥 Talent</div><span class="card-icon">👥</span><h3>Recruitment &amp; Workforce Solutions</h3><p>Strategic talent acquisition and staffing for IT &amp; business sectors — from C-suite to bulk government staffing.</p><ul class="card-bullets"><li>IT &amp; tech talent sourcing</li><li>Government project manpower</li><li>HR consulting &amp; policy design</li></ul><a class="card-link" data-service="recruitment">Learn More →</a></div>
-      <div class="svc-card reveal reveal-delay-2"><div class="card-num">06</div><div class="card-tag">🎯 Advisory</div><span class="card-icon">🎯</span><h3>Strategic Consulting for Business Growth</h3><p>High-impact strategic consulting for policy execution, organizational transformation, and sustainable growth.</p><ul class="card-bullets"><li>Business transformation strategy</li><li>Policy execution frameworks</li><li>Digital maturity assessments</li></ul><a class="card-link" data-service="strategic-consulting">Learn More →</a></div>
-      <div class="svc-card reveal reveal-delay-3"><div class="card-num">07</div><div class="card-tag">📈 Marketing</div><span class="card-icon">📈</span><h3>Digital Marketing &amp; Brand Growth</h3><p>Data-driven campaigns, SEO, performance marketing, and brand positioning for measurable digital growth.</p><ul class="card-bullets"><li>SEO &amp; content strategy</li><li>Performance marketing campaigns</li><li>Brand identity &amp; positioning</li></ul><a class="card-link" data-service="digital-marketing">Learn More →</a></div>
-    </div>
-    <div class="svc-grid-sm"><div class="svc-card-sm reveal"><span class="card-icon">💻</span><h3>Software Delivery</h3><p>Full-cycle product development — modern stack, agile delivery, QA, and ongoing support.</p></div><div class="svc-card-sm reveal reveal-delay-1"><span class="card-icon">🔒</span><h3>Cyber Security</h3><p>Proactive threat management, VAPT, and CERT-In compliance frameworks.</p></div><div class="svc-card-sm reveal reveal-delay-2"><span class="card-icon">🤖</span><h3>AI &amp; Automation</h3><p>Intelligent process automation and ML model deployment at enterprise scale.</p></div><div class="svc-card-sm reveal reveal-delay-3"><span class="card-icon">📡</span><h3>Telecom Solutions</h3><p>Network infrastructure design, OSS/BSS integration, and BharatNet support.</p></div></div>
-  </div>
-</section>
+    <!-- ADDITIONAL ADVISORY SUPPORT (lower priority) -->
+    <section id="advisory-support">
+      <div class="container">
+        <div class="advisory-support reveal">
+          <span class="section-badge" style="background:rgba(107,140,66,0.2);">Additional Advisory Support</span>
+          <h2 style="margin-bottom: 0.5rem;">Specialized Growth & Market Access</h2>
+          <p style="color: var(--text-muted);">Complementary services for organizations seeking market traction and brand acceleration.</p>
+          <div class="support-flex">
+            <div class="support-card"><div class="card-icon">📈</div><h4>Digital Marketing</h4><p>Performance marketing, SEO, content strategy, lead generation, and brand positioning for B2B, B2G and enterprise segments.</p><ul class="list-inline"><li>SEO & Analytics</li><li>Paid campaigns</li><li>Social & content</li></ul></div>
+            <div class="support-card"><div class="card-icon">🤝</div><h4>GTM & Business Matchmaking</h4><p>Market entry strategy, partner identification, channel ecosystem development, and opportunity mapping for government and private tenders.</p><ul class="list-inline"><li>Partner scouting</li><li>Bid advisory</li><li>GTM playbooks</li></ul></div>
+          </div>
+          <p class="pill-badge" style="display:inline-block; margin-top: 1rem; background:rgba(75,192,160,0.1); padding:0.2rem 0.7rem; border-radius:20px; font-size:0.7rem;">Ideal for startups, MNCs & enterprises expanding into India's public sector</p>
+        </div>
+      </div>
+    </section>
 
-<!-- Partner Section -->
-<section class="partner-section"><div class="partner-inner"><div class="partner-grid"><div class="partner-visual-box reveal"><div class="pvb-header"><div class="atp-logo-box">ATP</div><div><div class="pvb-title">AnyTechPros</div><div class="pvb-sub">"Where Innovation Meet Execution"</div></div></div><div class="client-grid"><div class="client-chip">Indian Railways</div><div class="client-chip">BSNL</div><div class="client-chip">Smart Cities</div><div class="client-chip">MPSEDC</div><div class="client-chip">RDSO</div><div class="client-chip">NHAI</div><div class="client-chip">State Govt.</div><div class="client-chip">SEZ Authorities</div><div class="client-chip">Municipal Corp</div><div class="client-chip">IT Dept</div><div class="client-chip">Telecom Dept</div><div class="client-chip">Big 6 Firms</div></div></div><div class="partner-copy reveal reveal-delay-1"><div class="section-label">Why Choose Us</div><h2 class="section-title">Your Trusted Partner in Finding the Best Solutions</h2><p class="section-sub" style="margin-bottom:28px">We don't just deliver projects — we own outcomes, build lasting relationships, and drive measurable impact.</p><div class="why-list"><div class="why-item"><div class="why-icon">🤝</div><div class="why-text"><strong>Trusted by Government &amp; Enterprises</strong><span>Deep relationships with Indian Railways, BSNL, NHAI, Smart Cities, and multiple state governments.</span></div></div><div class="why-item"><div class="why-icon">🏆</div><div class="why-text"><strong>Authorized MNC &amp; Big 6 Partner</strong><span>Certified delivery partner for multinational corporations and Big 6 consulting firms across India.</span></div></div><div class="why-item"><div class="why-icon">⚖️</div><div class="why-text"><strong>End-to-End Accountability</strong><span>We execute, deploy, and support — taking full ownership from strategy to go-live.</span></div></div><div class="why-item"><div class="why-icon">🔗</div><div class="why-text"><strong>10 Integrated Service Lines</strong><span>Security + AI + governance working in cross-domain synergy for maximum business impact.</span></div></div></div><a href="#contact" class="btn-primary">Get in Touch →</a></div></div></div></section>
+    <!-- FINAL CTA: Speak with a Solutions Expert -->
+    <section id="contact-cta">
+      <div class="container">
+        <div class="final-cta reveal">
+          <span class="section-badge" style="background: rgba(75,192,160,0.2);">Let's talk</span>
+          <h2 style="font-size: clamp(1.8rem, 5vw, 2.5rem);">Ready to accelerate your mission?</h2>
+          <p style="max-width: 580px; margin: 0 auto; color: #d4ece7;">Discuss your unique requirements with a solutions expert. We’ll match you with the right engagement model and service cluster.</p>
+          <a href="/contect" class="btn-expert" id="expertCtaBtn">🗣️ Speak with a Solutions Expert →</a>
+          <div style="margin-top: 2rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; font-size: 0.85rem;"><span>📧 experts@anytechpros.com</span><span>📞 +91 96256 51944</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<!-- Approach Section -->
-<section class="approach-section"><div class="approach-inner"><div class="approach-head reveal"><div class="section-label">How We Work</div><h2 class="section-title">Our Delivery Approach</h2><p class="section-sub">A proven 4-step methodology that turns complex challenges into measurable outcomes — fast, compliant, and scalable.</p></div><div class="process-grid"><div class="process-step reveal"><div class="ps-num">01</div><span class="ps-icon">🔍</span><h4>Discover &amp; Assess</h4><p>Deep-dive stakeholder analysis, requirement mapping, and feasibility assessment to build solid foundations.</p></div><div class="process-step reveal reveal-delay-1"><div class="ps-num">02</div><span class="ps-icon">📐</span><h4>Strategy &amp; Design</h4><p>Customized roadmap, architecture design, and compliance framework aligned perfectly to your goals.</p></div><div class="process-step reveal reveal-delay-2"><div class="ps-num">03</div><span class="ps-icon">🚀</span><h4>Execute &amp; Deploy</h4><p>Agile delivery with real-time monitoring, QA, and seamless stakeholder communication throughout.</p></div><div class="process-step reveal reveal-delay-3"><div class="ps-num">04</div><span class="ps-icon">📈</span><h4>Support &amp; Scale</h4><p>Post-deployment support, training, and scaling strategies that ensure long-term measurable impact.</p></div></div></div></section>
+  <%- include("../common/footer.ejs") %>
 
-<!-- CTA Section -->
-<section class="cta-section" id="contact"><div class="cta-inner"><h2>Ready to <em>Transform</em><br>Your Business?</h2><p>Let's discuss your goals. Our team of experts is ready to deliver a tailored strategy — built specifically for you.</p><div class="cta-btns"><a href="mailto:info@anytechpros.com" class="btn-primary">📧 Email Us</a><a href="tel:+919625651944" class="btn-outline">📞 Schedule a Call</a></div><div class="cta-contact-grid"><div class="contact-card"><div class="cc-icon">📧</div><div class="cc-label">Email</div><div class="cc-val">info@anytechpros.com</div></div><div class="contact-card"><div class="cc-icon">📞</div><div class="cc-label">Phone</div><div class="cc-val">+91 (9625651944)</div></div><div class="contact-card"><div class="cc-icon">📍</div><div class="cc-label">Location</div><div class="cc-val">India-First, Global Reach</div></div></div></div></section>
+  <script>
+    // reveal animations
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
 
-<!-- Modal -->
-<div id="serviceModal" class="modal-overlay">
-  <div class="modal-container">
-    <span class="modal-close">&times;</span>
-    <div id="modalContent"></div>
-  </div>
-</div>
-<%- include("../common/footer.ejs") %>
-
-<script>
-  // Detailed content for each service
-  const serviceDetails = {
-    "govt-drafting": {
-      title: "Government Drafting & Contract Writing",
-      badge: "Legal Tech",
-      description: `<p>AnyTechPros provides end‑to‑end contract lifecycle management and legal drafting services tailored for government procurement, public‑private partnerships, and regulatory compliance. Our team brings deep expertise in GeM, DGS&D, and state procurement rules.</p>
-      <h4>What we offer</h4>
-      <ul><li>RFP / RFQ / EOI drafting and review</li><li>Contract negotiation support &amp; vendor management</li><li>Compliance documentation (CVC, Procurement Manual)</li><li>MoU, PPP agreements, service level agreements</li><li>Legal risk assessment &amp; audit support</li></ul>
-      <h4>Why choose us</h4>
-      <p>With 28+ years of combined government consulting experience, we ensure every document is audit‑ready, transparent, and aligned with the latest legal frameworks. Our deliverables reduce procurement cycles and mitigate contractual disputes.</p>`
-    },
-    "gtm": {
-      title: "GTM Strategy & Business Matchmaking",
-      badge: "Growth",
-      description: `<p>We design data‑driven go‑to‑market strategies for enterprises and startups targeting government and B2G sectors. Our matchmaking engine connects you with the right partners, system integrators, and public sector stakeholders.</p>
-      <h4>Capabilities</h4>
-      <ul><li>Market segmentation &amp; opportunity mapping</li><li>Partner ecosystem development (SIs, OEMs, Govt bodies)</li><li>Revenue growth roadmaps &amp; pricing strategies</li><li>Bid‑ready positioning &amp; proposal support</li></ul>
-      <h4>Impact</h4>
-      <p>We have facilitated 50+ successful partnerships between technology providers and government departments across 15+ states.</p>`
-    },
-    "project-mgmt": {
-      title: "End-to-End Project Management & Monitoring",
-      badge: "Operations",
-      description: `<p>Full lifecycle ownership for government and enterprise projects. We establish PMOs, implement real‑time monitoring dashboards, and ensure milestone adherence with risk mitigation.</p>
-      <h4>Services include</h4>
-      <ul><li>Agile &amp; waterfall delivery frameworks</li><li>PMO setup, governance &amp; capacity building</li><li>Live MIS, geospatial dashboards &amp; automated alerts</li><li>Quality assurance, vendor coordination &amp; reporting</li></ul>
-      <h4>Track record</h4>
-      <p>Managed 200+ projects for clients like Indian Railways, BSNL, and state IT departments with 96% client satisfaction.</p>`
-    },
-    "recruitment": {
-      title: "Recruitment & Workforce Solutions",
-      badge: "Talent",
-      description: `<p>Strategic talent acquisition for IT, telecom, and government sectors. We provide bulk hiring, executive search, and HR consulting tailored to public sector compliance.</p>
-      <h4>What we deliver</h4>
-      <ul><li>IT &amp; tech talent sourcing (AI, cyber, cloud)</li><li>Government project manpower (contract &amp; permanent)</li><li>HR policy design &amp; compliance audits</li><li>Assessment centres &amp; onboarding automation</li></ul>
-      <h4>Our edge</h4>
-      <p>10+ years of Big Four consulting experience ensures we attract top talent while meeting stringent government norms.</p>`
-    },
-    "strategic-consulting": {
-      title: "Strategic Consulting for Business Growth",
-      badge: "Advisory",
-      description: `<p>High‑impact advisory for policy execution, digital transformation, and organizational change. We bridge the gap between vision and measurable outcomes.</p>
-      <h4>Focus areas</h4>
-      <ul><li>Business transformation &amp; operating model design</li><li>Policy execution frameworks &amp; program governance</li><li>Digital maturity assessments &amp; roadmaps</li><li>Stakeholder alignment &amp; change management</li></ul>
-      <h4>Results driven</h4>
-      <p>Trusted by Big 6 firms and state governments to deliver transformation programs worth ₹500+ crore.</p>`
-    },
-    "digital-marketing": {
-      title: "Digital Marketing & Brand Growth",
-      badge: "Marketing",
-      description: `<p>Data‑driven campaigns that build brand authority and generate leads in B2B, B2G, and enterprise segments. We combine creativity with performance analytics.</p>
-      <h4>Services</h4>
-      <ul><li>SEO &amp; content strategy (technical &amp; thought leadership)</li><li>Performance marketing (Google Ads, LinkedIn)</li><li>Brand identity, positioning &amp; messaging</li><li>Social media management &amp; reputation monitoring</li></ul>
-      <h4>Why us</h4>
-      <p>We understand government and enterprise buying cycles, delivering measurable ROI and pipeline growth.</p>`
-    }
-  };
-
-  // Get modal elements
-  const modal = document.getElementById('serviceModal');
-  const modalContent = document.getElementById('modalContent');
-  const closeModalBtn = document.querySelector('.modal-close');
-
-  function openModal(serviceKey) {
-    const data = serviceDetails[serviceKey];
-    if (!data) return;
-    modalContent.innerHTML = `
-      <div class="badge">${data.badge}</div>
-      <h3>${data.title}</h3>
-      ${data.description}
-    `;
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  // Attach event listeners to all .card-link elements
-  document.querySelectorAll('.card-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const service = link.getAttribute('data-service');
-      if (service) openModal(service);
-    });
-  });
-
-  // Close modal on background click or close button
-  closeModalBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  // Reveal animation observer
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-</script>
+    // expert CTA alert
+    
+    // smooth scroll for all "Discuss Your Requirement" buttons
+    document.querySelectorAll('.card-cta').forEach(btn => { btn.addEventListener('click', (e) => { e.preventDefault(); document.querySelector('#contact-cta')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); }); });
+    // initial visible check
+    window.addEventListener('load', () => { reveals.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible'); }); });
+  </script>
 </body>
 </html>

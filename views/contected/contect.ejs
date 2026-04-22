@@ -15,13 +15,10 @@
     <link rel="stylesheet" href="css/common/footer.css">
     <link rel="stylesheet" href="css/contect/contect.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
 </head>
 
 <body>
     <%- include("../common/header.ejs") %>
-
-
         <!-- MAIN GRID: both sections as attractive cards (left form, right get in touch card) -->
         <div class="contact-grid">
             <!-- LEFT COLUMN: Send Inquiry Form Card using real placeholder attributes for lighter appearance -->
@@ -35,11 +32,13 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label>FULL NAME</label>
-                                <input type="text" id="fullNameSimple" name="fullName" placeholder="Your full name" required>
+                                <input type="text" id="fullNameSimple" name="fullName" placeholder="Your full name"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label>MOBILE NUMBER</label>
-                                <input type="tel" id="mobileSimple" name="mobile" placeholder="+91 00000 00000" required>
+                                <input type="tel" id="mobileSimple" name="mobile" placeholder="+91 00000 00000"
+                                    required>
                             </div>
                         </div>
 
@@ -50,15 +49,15 @@
                             </div>
                             <div class="form-group">
                                 <label>ORGANISATION / DEPARTMENT</label>
-                                <input type="text" id="orgSimple" name="organisation" placeholder="Company or Government Department"
-                                    required>
+                                <input type="text" id="orgSimple" name="organisation"
+                                    placeholder="Company or Government Department" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group full-width">
                                 <label>SERVICE INTEREST</label>
-                                <select id="serviceSimple" name="service"  required>
+                                <select id="serviceSimple" name="service" required>
                                     <option value="" disabled selected>Select a service...</option>
                                     <option value="Government Projects & IT Consulting">Government Projects & IT
                                         Consulting</option>
@@ -82,8 +81,8 @@
                         <div class="form-row">
                             <div class="form-group full-width">
                                 <label>MESSAGE</label>
-                                <textarea rows="3" id="msgSimple"
-                                   name="message" placeholder="Describe your requirement or project brief."></textarea>
+                                <textarea rows="3" id="msgSimple" name="message"
+                                    placeholder="Describe your requirement or project brief."></textarea>
                             </div>
                         </div>
 
@@ -162,64 +161,62 @@
             </div>
         </div>
 
+
         <%- include("../common/footer.ejs") %>
-            </div>
+        <script>
+            // Simplified form logic with real placeholder attributes (light appearance by CSS)
+            const simpleForm = document.getElementById('simplifiedForm');
+            const fullNameSimple = document.getElementById('fullNameSimple');
+            const mobileSimple = document.getElementById('mobileSimple');
+            const emailSimple = document.getElementById('emailSimple');
+            const orgSimple = document.getElementById('orgSimple');
+            const msgSimple = document.getElementById('msgSimple');
+            const serviceSimple = document.getElementById('serviceSimple');
 
+            function resetSimpleForm() {
+                fullNameSimple.value = "";
+                mobileSimple.value = "";
+                emailSimple.value = "";
+                orgSimple.value = "";
+                msgSimple.value = "";
+                serviceSimple.selectedIndex = 0;  // selects the disabled placeholder option
+            }
+            document.getElementById("simplifiedForm").addEventListener("submit", async function (e) {
+                e.preventDefault();
 
-            <script>
-                // Simplified form logic with real placeholder attributes (light appearance by CSS)
-                const simpleForm = document.getElementById('simplifiedForm');
-                const fullNameSimple = document.getElementById('fullNameSimple');
-                const mobileSimple = document.getElementById('mobileSimple');
-                const emailSimple = document.getElementById('emailSimple');
-                const orgSimple = document.getElementById('orgSimple');
-                const msgSimple = document.getElementById('msgSimple');
-                const serviceSimple = document.getElementById('serviceSimple');
+                const form = this;
+                const formData = new FormData(form);
 
-                function resetSimpleForm() {
-                    fullNameSimple.value = "";
-                    mobileSimple.value = "";
-                    emailSimple.value = "";
-                    orgSimple.value = "";
-                    msgSimple.value = "";
-                    serviceSimple.selectedIndex = 0;  // selects the disabled placeholder option
+                try {
+                    const response = await fetch("/submit-contact", {
+                        method: "POST",
+                        body: new URLSearchParams(formData)
+                    });
+
+                    const result = await response.json();
+
+                    // ✅ Success Popup
+                    Swal.fire({
+                        icon: "success",
+                        title: "Submitted Successfully 🎉",
+                        text: "Your inquiry has been sent. We will contact you within 24 hours.",
+                        confirmButtonColor: "#14b8a6"
+                    });
+
+                    // ✅ Form Reset
+                    form.reset();
+
+                } catch (error) {
+                    // ❌ Error Popup
+                    Swal.fire({
+                        icon: "error",
+                        title: "Something went wrong",
+                        text: "Please try again later."
+                    });
                 }
-document.getElementById("simplifiedForm").addEventListener("submit", async function(e){
-    e.preventDefault();
+            });
 
-    const form = this;
-    const formData = new FormData(form);
-
-    try {
-        const response = await fetch("/submit-contact", {
-            method: "POST",
-            body: new URLSearchParams(formData)
-        });
-
-        const result = await response.json();
-
-        // ✅ Success Popup
-        Swal.fire({
-            icon: "success",
-            title: "Submitted Successfully 🎉",
-            text: "Your inquiry has been sent. We will contact you within 24 hours.",
-            confirmButtonColor: "#14b8a6"
-        });
-
-        // ✅ Form Reset
-        form.reset();
-
-    } catch (error) {
-        // ❌ Error Popup
-        Swal.fire({
-            icon: "error",
-            title: "Something went wrong",
-            text: "Please try again later."
-        });
-    }
-});
-               
-            </script>
+        </script>
 </body>
 
 </html>
