@@ -40,6 +40,10 @@ app.get("/id-cards",(req,res)=>{
 app.get("/contect",(req,res)=>{
     res.render("contected/contect.ejs")
 })
+
+app.get("/idcardsCheck",(req,res)=>{
+    res.render("check/id.ejs")
+})
 const contactRoutes = require("./routes/contactRoutes");
 
 // routes use
